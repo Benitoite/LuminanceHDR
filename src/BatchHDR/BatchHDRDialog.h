@@ -40,22 +40,22 @@ class IOWorker;
 class HdrCreationManager;
 
 namespace Ui {
-    class BatchHDRDialog;
+class BatchHDRDialog;
 }
 
-class BatchHDRDialog: public QDialog
-{
-Q_OBJECT
-private:
+class BatchHDRDialog : public QDialog {
+    Q_OBJECT
+   private:
     QScopedPointer<Ui::BatchHDRDialog> m_Ui;
-public:
+
+   public:
     BatchHDRDialog(QWidget *parent = 0);
     ~BatchHDRDialog();
 
-signals:
+   signals:
     void setValue(int);
 
-protected slots:
+   protected slots:
     void num_bracketed_changed(int);
     void on_selectInputFolder_clicked();
     void on_selectOutputFolder_clicked();
@@ -64,8 +64,8 @@ protected slots:
     void batch_hdr();
     void align();
     void create_hdr(int);
-    void error_while_loading(QString);
-    void writeAisData(QByteArray);
+    void error_while_loading(const QString &);
+    void writeAisData(QByteArray &);
     void check_start_button();
     void on_cancelButton_clicked();
     void align_selection_clicked();
@@ -77,15 +77,14 @@ protected slots:
     void createHdrFinished();
     void loadFilesAborted();
 
-protected:
-    LuminanceOptions m_luminance_options;
-
-    //Application-wide settings, loaded via QSettings
+   protected:
+    // Application-wide settings, loaded via QSettings
     QString m_batchHdrInputDir;
     QString m_batchHdrOutputDir;
     QString m_tempDir;
 
     QStringList m_bracketed;
+    QString m_output_file_name_base;
     IOWorker *m_IO_Worker;
     HdrCreationManager *m_hdrCreationManager;
     int m_numProcessed;
@@ -97,7 +96,7 @@ protected:
     bool m_processing;
     QVector<FusionOperatorConfig> m_customConfig;
     QFutureWatcher<void> m_futureWatcher;
-    QFuture<pfs::Frame*> m_future;
+    QFuture<pfs::Frame *> m_future;
     ProgressHelper m_ph;
     bool m_patches[agGridSize][agGridSize];
     pfsadditions::FormatHelper m_formatHelper;

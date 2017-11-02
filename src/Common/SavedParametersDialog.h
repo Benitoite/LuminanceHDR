@@ -28,33 +28,28 @@
 #include <QDialog>
 #include <QSqlTableModel>
 
-#include "Core/TonemappingOptions.h"
+#include <Core/TonemappingOptions.h>
 
-namespace Ui
-{
-    class SavedParametersDialog;
+namespace Ui {
+class SavedParametersDialog;
 }
 
-class SavedParametersDialog : public QDialog
-{
+class SavedParametersDialog : public QDialog {
     Q_OBJECT
 
-public:
+   public:
     //! \brief Default constructor
-    explicit SavedParametersDialog(QWidget *parent = 0);
-
-    //! \brief Specialized ctor
-    SavedParametersDialog(TMOperator op, QWidget *parent = 0);
+    explicit SavedParametersDialog(QSqlDatabase &db, QWidget *parent = 0);
 
     ~SavedParametersDialog();
 
     QModelIndex getCurrentIndex();
     QModelIndexList getSelectedRows();
-    QSqlQueryModel* getModel();
+    QSqlQueryModel *getModel();
 
-protected:
-    QSqlQueryModel* model;
+   protected:
+    QSqlQueryModel *m_model;
+    QSqlDatabase m_db;
     QScopedPointer<Ui::SavedParametersDialog> m_Ui;
-
 };
 #endif

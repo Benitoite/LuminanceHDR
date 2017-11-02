@@ -1,6 +1,8 @@
 PROJECT("Luminance HDR") # luminance-hdr)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.11)
-CMAKE_POLICY(SET CMP0043 OLD)
+#CMAKE_POLICY(SET CMP0043 OLD)
+CMAKE_POLICY(SET CMP0043 NEW)
+CMAKE_POLICY(SET CMP0054 NEW)
 
 # set include path for FindXXX.cmake files
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/build_files/Modules")
@@ -13,6 +15,11 @@ include(build_files/Modules/Internationalization.cmake)
 
 IF(TIMER_PROFILING)
     ADD_DEFINITIONS(-DTIMER_PROFILING)
+ENDIF()
+
+# ======== Enable GNU gsl inline code =======
+if(UNIX OR APPLE) # Visual Studio doesn't like this
+    ADD_DEFINITIONS(-DHAVE_INLINE )
 ENDIF()
 
 # ======== Has branch prediction =======

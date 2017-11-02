@@ -22,162 +22,69 @@
  *
  */
 
-#include <QDebug>
 #include <QAbstractItemView>
+#include <QDebug>
 #include <QHeaderView>
 #include <QModelIndex>
 #include <QSqlDatabase>
-#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlQuery>
 
+<<<<<<< HEAD
+#include <Common/SavedParametersDialog.h>
+#include <Common/ui_SavedParametersDialog.h>
+=======
 #include "Common/SavedParametersDialog.h"
 #include "Common/ui_SavedParametersDialog.h"
+>>>>>>> origin/rbtest1
 
-SavedParametersDialog::SavedParametersDialog(QWidget *parent):
-    QDialog(parent),
-    model(new QSqlQueryModel()),
-    m_Ui(new Ui::SavedParametersDialog)
-{
+SavedParametersDialog::SavedParametersDialog(QSqlDatabase &db, QWidget *parent)
+    : QDialog(parent),
+      m_model(new QSqlQueryModel()),
+      m_db(db),
+      m_Ui(new Ui::SavedParametersDialog) {
     m_Ui->setupUi(this);
 
     QString sqlQuery;
-    sqlQuery += "SELECT comment, 'ashikhmin' AS operator FROM ashikhmin UNION ";
-    sqlQuery += "SELECT comment, 'drago' AS operator FROM drago UNION ";
-    sqlQuery += "SELECT comment, 'durand' AS operator FROM durand UNION ";
-    sqlQuery += "SELECT comment, 'fattal' AS operator FROM fattal UNION ";
-    sqlQuery += "SELECT comment, 'ferradans' AS operator FROM ferradans UNION ";
-    sqlQuery += "SELECT comment, 'mantiuk06' AS operator FROM mantiuk06 UNION ";
-    sqlQuery += "SELECT comment, 'mantiuk08' AS operator FROM mantiuk08 UNION ";
-    sqlQuery += "SELECT comment, 'pattanaik' AS operator FROM pattanaik UNION ";
-    sqlQuery += "SELECT comment, 'reinhard02' AS operator FROM reinhard02 UNION ";
-    sqlQuery += "SELECT comment, 'reinhard05' AS operator FROM reinhard05";
-    model->setQuery(sqlQuery);
+    sqlQuery += QLatin1String(
+        "SELECT comment, 'ashikhmin' AS operator FROM ashikhmin UNION ");
+    sqlQuery +=
+        QLatin1String("SELECT comment, 'drago' AS operator FROM drago UNION ");
+    sqlQuery += QLatin1String(
+        "SELECT comment, 'durand' AS operator FROM durand UNION ");
+    sqlQuery += QLatin1String(
+        "SELECT comment, 'fattal' AS operator FROM fattal UNION ");
+    sqlQuery += QLatin1String(
+        "SELECT comment, 'ferradans' AS operator FROM ferradans UNION ");
+    sqlQuery += QLatin1String(
+        "SELECT comment, 'mantiuk06' AS operator FROM mantiuk06 UNION ");
+    sqlQuery += QLatin1String(
+        "SELECT comment, 'mantiuk08' AS operator FROM mantiuk08 UNION ");
+    sqlQuery += QLatin1String(
+        "SELECT comment, 'pattanaik' AS operator FROM pattanaik UNION ");
+    sqlQuery += QLatin1String(
+        "SELECT comment, 'reinhard02' AS operator FROM reinhard02 UNION ");
+    sqlQuery += QLatin1String(
+        "SELECT comment, 'reinhard05' AS operator FROM reinhard05");
+    m_model->setQuery(sqlQuery, m_db);
 
-    model->setHeaderData(0, Qt::Horizontal, tr("Comment"));
-    model->setHeaderData(1, Qt::Horizontal, tr("TM Operator"));
+    m_model->setHeaderData(0, Qt::Horizontal, tr("Comment"));
+    m_model->setHeaderData(1, Qt::Horizontal, tr("TM Operator"));
 
-    m_Ui->tableView->setModel(model);
-    m_Ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    m_Ui->tableView->setModel(m_model);
+    m_Ui->tableView->horizontalHeader()->setSectionResizeMode(
+        QHeaderView::ResizeToContents);
     m_Ui->tableView->show();
 }
 
+SavedParametersDialog::~SavedParametersDialog() { delete m_model; }
 
-SavedParametersDialog::SavedParametersDialog(TMOperator op, QWidget *parent):
-    QDialog(parent),
-    model(new QSqlTableModel()),
-    m_Ui(new Ui::SavedParametersDialog)
-{
-    m_Ui->setupUi(this);
-    //QSqlDatabase db = QSqlDatabase::database();
-
-    QSqlTableModel* tableModel = (QSqlTableModel*)model;
-    int col = 0;
-    switch (op)
-    {
-    case ashikhmin:
-        tableModel->setTable("ashikhmin");
-        tableModel->select();
-        model->setHeaderData(col++, Qt::Horizontal, tr("Simple"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Equation 2"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Local Contrast Threshold"));
-        break;
-    case drago:
-        tableModel->setTable("drago");
-        tableModel->select();
-        model->setHeaderData(col++, Qt::Horizontal, tr("Bias"));
-        break;
-    case durand:
-        tableModel->setTable("durand");
-        tableModel->select();
-        model->setHeaderData(col++, Qt::Horizontal, tr("Spatial Kernel Sigma"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Range Kernel Sigma"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Base Contrast"));
-        break;
-    case fattal:
-        tableModel->setTable("fattal");
-        tableModel->select();
-        model->setHeaderData(col++, Qt::Horizontal, tr("Alpha"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Beta"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Color Saturation"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Noise Reduction"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Old Fattal"));
-        break;
-    case ferradans:
-        tableModel->setTable("ferradans");
-        tableModel->select();
-        model->setHeaderData(col++, Qt::Horizontal, tr("Rho"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("InvAlpha"));
-        break;
-    case mantiuk06:
-        tableModel->setTable("mantiuk06");
-        tableModel->select();
-        model->setHeaderData(col++, Qt::Horizontal, tr("Contrast Equalization"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Contrast Factor"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Saturation Factor"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Detail Factor"));
-        break;
-    case mantiuk08:
-        tableModel->setTable("mantiuk08");
-        tableModel->select();
-        model->setHeaderData(col++, Qt::Horizontal, tr("Color Saturation"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Contrast Enhancement"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Luminance Level"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Manual Luminance Level"));
-        break;
-    case pattanaik:
-        tableModel->setTable("pattanaik");
-        tableModel->select();
-        model->setHeaderData(col++, Qt::Horizontal, tr("Cone and Rod based on Luminance"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Local Tonemapping"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Cone Level"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Rod Level"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Multiplier"));
-        break;
-    case reinhard02:
-        tableModel->setTable("reinhard02");
-        tableModel->select();
-        model->setHeaderData(col++, Qt::Horizontal, tr("Use Scales"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Key Value"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Phi Value"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Range"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Lower Scale"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Upper Scale"));
-        break;
-    case reinhard05:
-        tableModel->setTable("reinhard05");
-        tableModel->select();
-        model->setHeaderData(col++, Qt::Horizontal, tr("Brightness"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Chromatic Adaptation"));
-        model->setHeaderData(col++, Qt::Horizontal, tr("Light Adaptation"));
-        break;
-    default:
-        break;
-    }
-    model->setHeaderData(col++, Qt::Horizontal, tr("Pre-gamma"));
-    model->setHeaderData(col++, Qt::Horizontal, tr("Comment"));
-
-    m_Ui->tableView->setModel(model);
-    m_Ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    m_Ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    m_Ui->tableView->show();
-}
-
-SavedParametersDialog::~SavedParametersDialog()
-{
-    delete model;
-}
-
-QModelIndex SavedParametersDialog::getCurrentIndex()
-{
+QModelIndex SavedParametersDialog::getCurrentIndex() {
     return m_Ui->tableView->currentIndex();
 }
 
-QSqlQueryModel* SavedParametersDialog::getModel()
-{
-    return model;
-}
+QSqlQueryModel *SavedParametersDialog::getModel() { return m_model; }
 
-QModelIndexList SavedParametersDialog::getSelectedRows()
-{
+QModelIndexList SavedParametersDialog::getSelectedRows() {
     return m_Ui->tableView->selectionModel()->selectedRows();
 }

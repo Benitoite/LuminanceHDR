@@ -28,25 +28,25 @@
 #ifndef COMMANDLINE_H
 #define COMMANDLINE_H
 
-#include <QString>
-#include <QProcess>
 #include <QDir>
+#include <QProcess>
 #include <QScopedPointer>
+#include <QString>
+#include <QStringList>
 
-#include "Core/TonemappingOptions.h"
-#include "HdrWizard/HdrCreationManager.h"
-#include "Libpfs/frame.h"
-#include "Libpfs/params.h"
+#include <Core/TonemappingOptions.h>
+#include <HdrWizard/HdrCreationManager.h>
+#include <Libpfs/frame.h>
+#include <Libpfs/params.h>
 #include "ezETAProgressBar.hpp"
 
-class CommandLineInterfaceManager : public QObject
-{
+class CommandLineInterfaceManager : public QObject {
     Q_OBJECT
-public:
+   public:
     CommandLineInterfaceManager(const int argc, char **argv);
     int execCommandLineParams();
 
-private:
+   private:
     const int argc;
     char **argv;
 
@@ -56,11 +56,7 @@ private:
         UNKNOWN_MODE
     } operationMode;
 
-    enum align_mode {
-        AIS_ALIGN,
-        MTB_ALIGN,
-        NO_ALIGN
-    } alignMode;
+    enum align_mode { AIS_ALIGN, MTB_ALIGN, NO_ALIGN } alignMode;
 
     QList<float> ev;
     QScopedPointer<HdrCreationManager> hdrCreationManager;
@@ -84,24 +80,31 @@ private:
     bool isHtml;
     bool isHtmlDone;
     int htmlQuality;
+    bool isProposedLdrName;
+    bool isProposedHdrName;
     std::string pageName;
     std::string imagesDir;
+    std::string ldrExtension;
+    std::string hdrExtension;
     QString saveAlignedImagesPrefix;
+    QStringList validLdrExtensions;
+    QStringList validHdrExtensions;
 
     void generateHTML();
     void startTonemap();
 
-private slots:
+   private slots:
     void finishedLoadingInputFiles();
     void ais_failed(QProcess::ProcessError);
-    void errorWhileLoading(QString);
+    void errorWhileLoading(const QString &);
     void createHDR(int);
     void execCommandLineParamsSlot();
     void setProgressBar(int);
     void updateProgressBar(int);
-    void readData(QByteArray);
+    void readData(const QByteArray &);
+    void tonemapFailed(const QString &);
 
-signals:
+   signals:
     void finishedParsing();
 };
 
