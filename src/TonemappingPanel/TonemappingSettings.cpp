@@ -27,10 +27,17 @@
 
 #include <algorithm>
 
+<<<<<<< HEAD
 #include <Core/TonemappingOptions.h>
 #include <PreviewPanel/PreviewLabel.h>
 #include <TonemappingPanel/TonemappingSettings.h>
 #include <TonemappingPanel/ui_TonemappingSettings.h>
+=======
+#include "Core/TonemappingOptions.h"
+#include "PreviewPanel/PreviewLabel.h"
+#include "TonemappingPanel/TonemappingSettings.h"
+#include "TonemappingPanel/ui_TonemappingSettings.h"
+>>>>>>> origin/rbtest1
 
 namespace  // anoymous namespace
 {

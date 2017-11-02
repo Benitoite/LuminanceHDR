@@ -28,6 +28,10 @@
 #include <QMessageBox>
 #include <QUrl>
 
+<<<<<<< HEAD
+=======
+#include "UI/ui_ExportToHtmlDialog.h"
+>>>>>>> origin/rbtest1
 #include "HdrHTML/pfsouthdrhtml.h"
 #include "Libpfs/exception.h"
 #include "Libpfs/frame.h"

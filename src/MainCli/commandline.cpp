@@ -245,6 +245,7 @@ directory must exist.  Useful to avoid clutter in the current directory. \
                               .constData());
 
     po::options_description tmo_fattal(tr(" Fattal").toUtf8().constData());
+<<<<<<< HEAD
     tmo_fattal.add_options()(
         "tmoFatAlpha",
         po::value<float>(&tmopts->operator_options.fattaloptions.alpha),
@@ -308,6 +309,34 @@ directory must exist.  Useful to avoid clutter in the current directory. \
         po::value<bool>(
             &tmopts->operator_options.mantiuk08options.setluminance),
         tr("enable luminance level true|false").toUtf8().constData());
+=======
+    tmo_fattal.add_options()
+        ("tmoFatAlpha", po::value<float>(&tmopts->operator_options.fattaloptions.alpha),  tr("alpha FLOAT").toUtf8().constData())
+        ("tmoFatBeta", po::value<float>(&tmopts->operator_options.fattaloptions.beta),  tr("beta FLOAT").toUtf8().constData())
+        ("tmoFatColor", po::value<float>(&tmopts->operator_options.fattaloptions.color),  tr("color FLOAT").toUtf8().constData())
+        ("tmoFatNoise", po::value<float>(&tmopts->operator_options.fattaloptions.noiseredux),  tr("noise FLOAT").toUtf8().constData())
+        ("tmoFatNew", po::value<bool>(&tmopts->operator_options.fattaloptions.fftsolver), tr("new true|false").toUtf8().constData())
+    ;
+    po::options_description tmo_ferradans(tr(" Ferradans").toUtf8().constData());
+    tmo_ferradans.add_options()
+        ("tmoFerRho", po::value<float>(&tmopts->operator_options.ferradansoptions.rho),  tr("rho FLOAT").toUtf8().constData())
+        ("tmoFerInvAlpha", po::value<float>(&tmopts->operator_options.ferradansoptions.inv_alpha),  tr("inv_alpha FLOAT").toUtf8().constData())
+    ;
+    po::options_description tmo_mantiuk06(tr(" Mantiuk 06").toUtf8().constData());
+    tmo_mantiuk06.add_options()
+        ("tmoM06Contrast", po::value<float>(&tmopts->operator_options.mantiuk06options.contrastfactor),  tr("contrast FLOAT").toUtf8().constData())
+        ("tmoM06Saturation", po::value<float>(&tmopts->operator_options.mantiuk06options.saturationfactor),  tr("saturation FLOAT").toUtf8().constData())
+        ("tmoM06Detail", po::value<float>(&tmopts->operator_options.mantiuk06options.detailfactor),  tr("detail FLOAT").toUtf8().constData())
+        ("tmoM06ContrastEqual", po::value<bool>(&tmopts->operator_options.mantiuk06options.contrastequalization), tr("equalization true|false").toUtf8().constData())
+    ;
+    po::options_description tmo_mantiuk08(tr(" Mantiuk 08").toUtf8().constData());
+    tmo_mantiuk08.add_options()
+        ("tmoM08ColorSaturation", po::value<float>(&tmopts->operator_options.mantiuk08options.colorsaturation),  tr("color saturation FLOAT").toUtf8().constData())
+        ("tmoM08ContrastEnh", po::value<float>(&tmopts->operator_options.mantiuk08options.contrastenhancement),  tr("contrast enhancement FLOAT").toUtf8().constData())
+        ("tmoM08LuminanceLvl", po::value<float>(&tmopts->operator_options.mantiuk08options.luminancelevel),  tr("luminance level FLOAT").toUtf8().constData())
+        ("tmoM08SetLuminance", po::value<bool>(&tmopts->operator_options.mantiuk08options.setluminance), tr("enable luminance level true|false").toUtf8().constData())
+    ;
+>>>>>>> origin/rbtest1
     po::options_description tmo_durand(tr(" Durand").toUtf8().constData());
     tmo_durand.add_options()(
         "tmoDurSigmaS",

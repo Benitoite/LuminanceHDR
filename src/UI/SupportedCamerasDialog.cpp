@@ -21,8 +21,14 @@
  * @author Franco Comida <francocomida@users.sourceforge.net>
  */
 
+<<<<<<< HEAD
 #include "SupportedCamerasDialog.h"
 #include <boost/foreach.hpp>
+=======
+#include <boost/foreach.hpp>
+#include "UI/SupportedCamerasDialog.h"
+#include "UI/ui_SupportedCamerasDialog.h"
+>>>>>>> origin/rbtest1
 #include "Common/GitSHA1.h"
 #include "Common/config.h"
 #include "ui_SupportedCamerasDialog.h"

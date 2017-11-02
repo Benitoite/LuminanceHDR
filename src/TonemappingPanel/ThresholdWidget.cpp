@@ -22,7 +22,11 @@
  *
  */
 
+<<<<<<< HEAD
 #include "ThresholdWidget.h"
+=======
+#include "TonemappingPanel/ThresholdWidget.h"
+>>>>>>> origin/rbtest1
 #include "TonemappingPanel/ui_ThresholdWidget.h"
 
 ThresholdWidget::ThresholdWidget(QWidget *parent, Qt::WindowFlags flags)

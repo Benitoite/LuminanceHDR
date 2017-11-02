@@ -42,6 +42,7 @@
 #include <QStatusBar>
 #include <QTextStream>
 
+<<<<<<< HEAD
 #include <Common/LuminanceOptions.h>
 #include <Common/config.h>
 #include <PreviewPanel/PreviewLabel.h>
@@ -66,6 +67,31 @@ TonemappingPanel::TonemappingPanel(int mainWinNumber, PreviewPanel *panel,
       m_autolevelThreshold(0.985f),
       m_thd(new ThresholdWidget(this)),
       m_Ui(new Ui::TonemappingPanel) {
+=======
+#include "Common/LuminanceOptions.h"
+#include "Common/config.h"
+#include "PreviewPanel/PreviewLabel.h"
+#include "TonemappingPanel/TonemappingPanel.h"
+#include "TonemappingPanel/TMOProgressIndicator.h"
+#include "TonemappingPanel/TonemappingSettings.h"
+#include "Common/SavedParametersDialog.h"
+#include "TonemappingPanel/SavingParametersDialog.h"
+#include "TonemappingOperators/pfstmdefaultparams.h"
+#include "UI/Gang.h"
+#include "TonemappingPanel/ui_TonemappingPanel.h"
+
+#include "contrib/qtwaitingspinner/QtWaitingSpinner.h"
+
+TonemappingPanel::TonemappingPanel(int mainWinNumber, PreviewPanel *panel, QWidget *parent):
+    QWidget(parent),
+    adding_custom_size(false),
+    m_previewPanel(panel),
+    m_mainWinNumber(mainWinNumber),
+    m_autolevelThreshold(0.985f),
+    m_thd(new ThresholdWidget(this)),
+    m_Ui(new Ui::TonemappingPanel)
+{
+>>>>>>> origin/rbtest1
     m_Ui->setupUi(this);
 
     sm_counter++;

@@ -21,7 +21,11 @@
  * ----------------------------------------------------------------------
  */
 
+<<<<<<< HEAD
 #include "HdrWizard/HdrWizard.h"
+=======
+#include "HdrWizard.h"
+>>>>>>> origin/rbtest1
 #include "HdrWizard/ui_HdrWizard.h"
 
 #include <boost/bind.hpp>

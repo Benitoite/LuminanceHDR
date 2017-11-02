@@ -46,8 +46,29 @@
 #include <Exif/ExifOperations.h>
 #include <OsIntegration/osintegration.h>
 
+<<<<<<< HEAD
 BatchTMDialog::BatchTMDialog(QWidget *p, QSqlDatabase db)
     : QDialog(p), m_Ui(new Ui::BatchTMDialog), m_abort(false), m_db(db) {
+=======
+#include "BatchTM/BatchTMDialog.h"
+#include "BatchTM/ui_BatchTMDialog.h"
+
+#include "Common/config.h"
+#include "Common/SavedParametersDialog.h"
+#include "Exif/ExifOperations.h"
+#include "Core/TonemappingOptions.h"
+#include "BatchTM/BatchTMJob.h"
+#include "OsIntegration/osintegration.h"
+
+BatchTMDialog::BatchTMDialog(QWidget *p):
+    QDialog(p), m_Ui(new Ui::BatchTMDialog),
+    start_left(-1), stop_left(-1), start_right(-1), stop_right(-1), m_abort(false)
+{
+    //qRegisterMetaType<QImage>("QImage");    // What's its meaning?!
+#ifdef QT_DEBUG
+    qDebug() << "BatchTMDialog::BatchTMDialog()";
+#endif
+>>>>>>> origin/rbtest1
     m_Ui->setupUi(this);
 
     if (!QIcon::hasThemeIcon(QStringLiteral("vcs-added")))

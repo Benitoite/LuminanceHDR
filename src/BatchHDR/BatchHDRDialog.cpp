@@ -23,9 +23,14 @@
 *
 */
 
+<<<<<<< HEAD
 #include <BatchHDR/BatchHDRDialog.h>
 #include <BatchHDR/ui_BatchHDRDialog.h>
 #include <Common/CommonFunctions.h>
+=======
+#include "BatchHDR/BatchHDRDialog.h"
+#include "BatchHDR/ui_BatchHDRDialog.h"
+>>>>>>> origin/rbtest1
 
 #include <QDebug>
 #include <QDir>

@@ -34,6 +34,10 @@
 #include <QWhatsThis>
 #include <cassert>
 
+<<<<<<< HEAD
+=======
+#include "HdrWizard/ui_EditingTools.h"
+>>>>>>> origin/rbtest1
 #include "Common/config.h"
 #include "Exif/ExifOperations.h"
 #include "HdrCreation/mtb_alignment.h"

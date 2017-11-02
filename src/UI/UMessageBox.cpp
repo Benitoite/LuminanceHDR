@@ -30,7 +30,10 @@
 
 #include "Common/GitSHA1.h"
 #include "Common/archs.h"
+<<<<<<< HEAD
 #include "Common/config.h"
+=======
+>>>>>>> origin/rbtest1
 #include "UI/ui_about.h"
 
 namespace {

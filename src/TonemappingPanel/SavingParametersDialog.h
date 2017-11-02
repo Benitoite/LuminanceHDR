@@ -25,7 +25,11 @@
 #ifndef SAVINGPARAMETERSDIALOG_H
 #define SAVINGPARAMETERSDIALOG_H
 
+<<<<<<< HEAD
 #include <QDialog>
+=======
+#include "TonemappingPanel/ui_SavingParametersDialog.h"
+>>>>>>> origin/rbtest1
 
 namespace Ui {
 class SavingParameters;

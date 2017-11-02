@@ -782,6 +782,7 @@ void HDRHTMLSet::add_image(int width, int height, float *R, float *G, float *B,
     locale::global(locale(user_locale.c_str()));
 }
 
+<<<<<<< HEAD
 void print_image_objects(ostream &out, void *user_data, const char *parameter);
 void print_cf_table(ostream &out, void *user_data, const char *parameter);
 void print_image_htmlcode(ostream &out, void *user_data, const char *parameter);
@@ -807,6 +808,35 @@ void HDRHTMLSet::generate_webpage(const char *page_template,
     h_c_b.append("\\hdrhtml_c_b");
     lut_filename << h_c_b.toStdString().c_str() << image_list.front().basis + 1
                  << ".csv";
+=======
+void print_image_objects( ostream &out, void *user_data, const char *parameter );
+void print_cf_table( ostream &out, void *user_data, const char *parameter );
+void print_image_htmlcode( ostream &out, void *user_data, const char *parameter );
+
+void HDRHTMLSet::generate_webpage( const char *page_template, const char *image_template,
+  const char *out_dir, const char *object_output, const char *html_output, bool verbose)
+{
+  if( image_list.empty() )
+    return;
+
+  string user_locale = locale("").name();
+  locale::global(locale::classic());
+
+  ostringstream out_file_name;
+  if (out_dir != NULL)
+      out_file_name << out_dir << "/";
+  if( page_name == NULL )
+    out_file_name << image_list.front().base_name << ".html";
+  else
+    out_file_name << page_name;
+
+  // Load the table of the opacity coeffcients
+  ostringstream lut_filename;
+#if defined (WIN32) || defined (__APPLE__)
+  QString h_c_b = HDRHTMLDIR;
+  h_c_b.append("\\hdrhtml_c_b");
+  lut_filename << h_c_b.toStdString().c_str() << image_list.front().basis+1 << ".csv";
+>>>>>>> origin/rbtest1
 #else
     lut_filename << HDRHTMLDIR "/hdrhtml_c_b" << image_list.front().basis + 1
                  << ".csv";
@@ -831,6 +861,7 @@ void HDRHTMLSet::generate_webpage(const char *page_template,
         throw;
     }
 
+<<<<<<< HEAD
     if (object_output != NULL) {
         ofstream oofs(object_output);
         if (!oofs.good()) {
@@ -859,6 +890,9 @@ void HDRHTMLSet::generate_webpage(const char *page_template,
             throw;
         }
     }
+=======
+  locale::global(locale(user_locale.c_str()));
+>>>>>>> origin/rbtest1
 }
 
 void print_image_objects(ostream &out, void *user_data, const char *parameter) {

@@ -34,6 +34,12 @@
 #include <cstdlib>
 #include <iostream>
 
+<<<<<<< HEAD
+=======
+#include "HdrHTML/hdrhtml-path.hxx"
+#include "Libpfs/frame.h"
+#include "Libpfs/exception.h"
+>>>>>>> origin/rbtest1
 #include "Libpfs/colorspace/colorspace.h"
 #include "Libpfs/exception.h"
 #include "Libpfs/frame.h"

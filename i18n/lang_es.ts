@@ -5524,7 +5524,7 @@ Error: %1</translation>
     <message>
         <location filename="../src/Common/SavedParametersDialog.cpp" line="126"/>
         <source>Contrast Factor</source>
-        <translation>Facto de Constraste</translation>
+        <translation>Facto de Contraste</translation>
     </message>
     <message>
         <location filename="../src/Common/SavedParametersDialog.cpp" line="128"/>
@@ -6078,7 +6078,11 @@ Error: %1</translation>
     </message>
     <message>
         <source>Contrast Factor</source>
+<<<<<<< HEAD
         <translation type="vanished">Facto de Constraste</translation>
+=======
+        <translation>Facto de Contraste</translation>
+>>>>>>> origin/rbtest1
     </message>
     <message>
         <source>Saturation Factor</source>
