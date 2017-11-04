@@ -25,15 +25,26 @@
 #ifndef SAVINGPARAMETERSDIALOG_H
 #define SAVINGPARAMETERSDIALOG_H
 
+<<<<<<< HEAD
+#include <QDialog>
+=======
 #include "TonemappingPanel/ui_SavingParametersDialog.h"
+>>>>>>> origin/rbtest1
 
-class SavingParameters : public QDialog, private Ui::SavingParameters
-{
+namespace Ui {
+class SavingParameters;
+}
+
+class SavingParameters : public QDialog {
     Q_OBJECT
 
-public:
+   public:
     SavingParameters(QWidget *parent = 0);
-    QString getComment() { return comment->text(); }
+    ~SavingParameters();
+    QString getComment();
+
+   protected:
+    QScopedPointer<Ui::SavingParameters> m_Ui;
 };
 
 #endif

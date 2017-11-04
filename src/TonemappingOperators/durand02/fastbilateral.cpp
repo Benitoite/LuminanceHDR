@@ -27,101 +27,98 @@
  * $Id: fastbilateral.cpp,v 1.5 2008/09/09 18:10:49 rafm Exp $
  */
 
-#include <iostream>
 #include <cmath>
 
 #include <fftw3.h>
 
-#include "Libpfs/array2d.h"
-#include "Libpfs/progress.h"
+#include <Common/init_fftw.h>
+#include <Libpfs/array2d.h>
+#include <Libpfs/progress.h>
 #include "fastbilateral.h"
 
 #ifdef BRANCH_PREDICTION
-#define likely(x)       __builtin_expect((x),1)
-#define unlikely(x)     __builtin_expect((x),0)
+#define likely(x) __builtin_expect((x), 1)
+#define unlikely(x) __builtin_expect((x), 0)
 #else
-#define likely(x)       (x)
-#define unlikely(x)     (x)
+#define likely(x) (x)
+#define unlikely(x) (x)
 #endif
 
 using namespace std;
 
 // TODO: use spatial convolution rather than FFT, should be much
 // faster except for a very large kernels
-class GaussianBlur
-{
-  float* source;
-  fftwf_complex* freq;
-  fftwf_plan fplan_fw;
-  fftwf_plan fplan_in;
+class GaussianBlur {
+    float *source;
+    fftwf_complex *freq;
+    fftwf_plan fplan_fw;
+    fftwf_plan fplan_in;
 
-  float sigma;
+    float sigma;
 
-public:
-  GaussianBlur( int nx, int ny, float sigma ) : sigma( sigma )
-  {
-    int ox = nx;
-    int oy = ny/2 + 1;            // saves half of the data
-    const int osize = ox * oy;
-    source =  (float*)fftwf_malloc(sizeof(float) * nx * 2 * (ny/2+1) );
-    freq = (fftwf_complex*) fftwf_malloc(sizeof(fftwf_complex) * osize);
-//    if( source == NULL || freq == NULL )
-    //TODO: throw exception
-    fplan_fw = fftwf_plan_dft_r2c_2d(nx, ny, source, freq, FFTW_ESTIMATE);
-    fplan_in = fftwf_plan_dft_c2r_2d(nx, ny, freq, source, FFTW_ESTIMATE);
-  }
+   public:
+    GaussianBlur(int nx, int ny, float sigma) : sigma(sigma) {
+        init_fftw();
+        int ox = nx;
+        int oy = ny / 2 + 1;  // saves half of the data
+        const int osize = ox * oy;
+        FFTW_MUTEX::fftw_mutex_plan.lock();
+        source = (float *)fftwf_malloc(sizeof(float) * nx * 2 * (ny / 2 + 1));
+        freq = (fftwf_complex *)fftwf_malloc(sizeof(fftwf_complex) * osize);
+        if (source == NULL || freq == NULL) {
+            std::bad_alloc excep;
+            FFTW_MUTEX::fftw_mutex_plan.unlock();
+            throw excep;
+        }
+        fplan_fw = fftwf_plan_dft_r2c_2d(nx, ny, source, freq, FFTW_ESTIMATE);
+        fplan_in = fftwf_plan_dft_c2r_2d(nx, ny, freq, source, FFTW_ESTIMATE);
+        FFTW_MUTEX::fftw_mutex_plan.unlock();
+    }
 
+    void blur(const pfs::Array2Df &I, pfs::Array2Df &J) {
+        int x, y;
 
-  void blur( const pfs::Array2Df& I, pfs::Array2Df& J )
-  {
-    int x,y;
+        int nx = I.getCols();
+        int ny = I.getRows();
+        int nsize = nx * ny;
 
-    int nx = I.getCols();
-    int ny = I.getRows();
-    int nsize = nx * ny;
+        int ox = nx;
+        int oy = ny / 2 + 1;  // saves half of the data
 
-    int ox = nx;
-    int oy = ny/2 + 1;            // saves half of the data
+        for (y = 0; y < ny; y++)
+            for (x = 0; x < nx; x++) source[x * ny + y] = I(x, y);
 
-    for( y=0 ; y<ny ; y++ )
-      for( x=0 ; x<nx ; x++ )
-        source[x*ny+y] = I(x,y);
+        fftwf_execute(fplan_fw);
 
-    fftwf_execute(fplan_fw);
+        // filter
+        float sig = nx / (2.0f * sigma);
+        float sig2 = 2.0f * sig * sig;
+        for (x = 0; x < ox / 2; x++)
+            for (y = 0; y < oy; y++) {
+                float d2 = x * x + y * y;
+                float kernel = exp(-d2 / sig2);
 
-    // filter
-    float sig = nx/(2.0f*sigma);
-    float sig2 = 2.0f*sig*sig;
-    for( x=0 ; x<ox/2 ; x++ )
-      for( y=0 ; y<oy ; y++ )
-      {
-        float d2 = x*x + y*y;
-        float kernel = exp( -d2 / sig2 );
+                freq[x * oy + y][0] *= kernel;
+                freq[x * oy + y][1] *= kernel;
+                freq[(ox - x - 1) * oy + y][0] *= kernel;
+                freq[(ox - x - 1) * oy + y][1] *= kernel;
+            }
 
-        freq[x*oy+y][0] *= kernel;
-        freq[x*oy+y][1] *= kernel;
-        freq[(ox-x-1)*oy+y][0] *= kernel;
-        freq[(ox-x-1)*oy+y][1] *= kernel;
-      }
+        fftwf_execute(fplan_in);
 
-    fftwf_execute(fplan_in);
+        for (x = 0; x < nx; x++)
+            for (y = 0; y < ny; y++) J(x, y) = source[x * ny + y] / nsize;
+    }
 
-    for( x=0 ; x<nx ; x++ )
-      for( y=0 ; y<ny ; y++ )
-        J(x,y) = source[x*ny+y] / nsize;
-  }
-
-  ~GaussianBlur()
-  {
-    fftwf_free(source);
-    fftwf_free(freq);
-    fftwf_destroy_plan(fplan_fw);
-    fftwf_destroy_plan(fplan_in);
-  }
-
-
+    ~GaussianBlur() {
+        FFTW_MUTEX::fftw_mutex_destroy_plan.lock();
+        fftwf_free(source);
+        fftwf_free(freq);
+        fftwf_destroy_plan(fplan_fw);
+        fftwf_destroy_plan(fplan_in);
+        FFTW_MUTEX::fftw_mutex_destroy_plan.unlock();
+    }
 };
-
 
 // According to the original paper, downsampling can be used to speed
 // up computation. However, downsampling cannot be mathematically
@@ -228,120 +225,105 @@ PiecewiseBilateral (Image I, spatial kernel fs , intensity influence gr )
     J=J+Jj .*  InterpolationWeight(I, ij )
 */
 
-void fastBilateralFilter(const pfs::Array2Df& I, pfs::Array2Df& J,
+void fastBilateralFilter(const pfs::Array2Df &I, pfs::Array2Df &J,
                          float sigma_s, float sigma_r, int /*downsample*/,
-                         pfs::Progress &ph)
-{
-  int w = I.getCols();
-  int h = I.getRows();
-  int size = w * h;
+                         pfs::Progress &ph) {
+    int w = I.getCols();
+    int h = I.getRows();
+    int size = w * h;
 
-  // find range of values in the input array
-  float maxI = I(0);
-  float minI = I(0);
-  for (int i=0 ; i<size ; i++)
-  {
-    float v = I(i);
-    if( unlikely( v>maxI ) ) maxI = v;
-    if( unlikely( v<minI ) ) minI = v;
-    J(i) = 0.0f;             // zero output
-  }
-
-  pfs::Array2Df* JJ;
-//  if( downsample != 1 )
-//    JJ = new pfs::Array2D(w,h);
-
-//  w /= downsample;
-//  h /= downsample;
-
-  int sizeZ = w*h;
-//  pfs::Array2D* Iz = new pfs::Array2D(w,h);
-//  downsampleArray(I,Iz);
-  const pfs::Array2Df* Iz = &I;
-//  sigma_s /= downsample;
-
-  pfs::Array2Df* jJ = new pfs::Array2Df(w,h);
-  pfs::Array2Df* jG = new pfs::Array2Df(w,h);
-  pfs::Array2Df* jK = new pfs::Array2Df(w,h);
-  pfs::Array2Df* jH = new pfs::Array2Df(w,h);
-
-  const int NB_SEGMENTS = (int)ceil((maxI-minI)/sigma_r);
-  float stepI = (maxI-minI)/NB_SEGMENTS;
-
-  GaussianBlur gaussian_blur( w, h, sigma_s );
-
-  // piecewise bilateral
-  for( int j=0 ; j<NB_SEGMENTS ; j++ )
-  {
-    ph.setValue( j * 100 / NB_SEGMENTS );
-    if (ph.canceled())
-        break;
-
-    float jI = minI + j*stepI;        // current intensity value
-
-    for (int i=0 ; i<sizeZ ; i++)
-    {
-      float dI = (*Iz)(i)-jI;
-      (*jG)(i) = exp( -(dI*dI) / (sigma_r*sigma_r) );
-      (*jH)(i) = (*jG)(i) * I(i);
+    // find range of values in the input array
+    float maxI = I(0);
+    float minI = I(0);
+    for (int i = 0; i < size; i++) {
+        float v = I(i);
+        if (unlikely(v > maxI)) maxI = v;
+        if (unlikely(v < minI)) minI = v;
+        J(i) = 0.0f;  // zero output
     }
 
-    gaussian_blur.blur( *jG, *jK );
-    gaussian_blur.blur( *jH, *jH );
+    pfs::Array2Df *JJ;
+    //  if( downsample != 1 )
+    //    JJ = new pfs::Array2D(w,h);
 
-//    convolveArray(jG, sigma_s, jK);
-//    convolveArray(jH, sigma_s, jH);
+    //  w /= downsample;
+    //  h /= downsample;
 
-    for (int i=0 ; i<sizeZ ; i++ )
-      if( likely((*jK)(i)!=0.0f) )
-        (*jJ)(i) = (*jH)(i) / (*jK)(i);
-      else
-        (*jJ)(i) = 0.0f;
+    int sizeZ = w * h;
+    //  pfs::Array2D* Iz = new pfs::Array2D(w,h);
+    //  downsampleArray(I,Iz);
+    const pfs::Array2Df *Iz = &I;
+    //  sigma_s /= downsample;
 
-    //  if( downsample == 1 )
-      JJ = jJ;                  // No upsampling is necessary
-//    else
-//      upsampleArray(jJ,JJ);
+    pfs::Array2Df jJ(w, h);
+    pfs::Array2Df jG(w, h);
+    pfs::Array2Df jK(w, h);
+    pfs::Array2Df jH(w, h);
 
-    if( j == 0 ) {
-      // if the first segment - to account for the range boundary
-      for (int i=0 ; i<size ; i++ )
-      {
-        if( likely( I(i) > jI + stepI ) )
-          continue;             // wi = 0;
-        if( likely( I(i) > jI ) ) {
-          float wi = (stepI - (I(i)-jI)) / stepI;
-          J(i) += (*JJ)(i)*wi;
-        } else
-          J(i) += (*JJ)(i);
-      }
-    } else if( j == NB_SEGMENTS-1 ) {
-      // if the last segment - to account for the range boundary
-      for (int i=0 ; i<size ; i++ )
-      {
-        if( likely( I(i) < jI - stepI ) )
-          continue;             // wi = 0;
-        if( likely( I(i) < jI ) ) {
-          float wi = (stepI - (jI-I(i))) / stepI;
-          J(i) += (*JJ)(i)*wi;
-        } else
-          J(i) += (*JJ)(i);
-      }
-    } else {
-      for(int i=0 ; i<size ; i++ )
-      {
-        float wi = (stepI - fabs( I(i)-jI )) / stepI;
-        if( unlikely( wi>0.0f ) )
-          J(i) += (*JJ)(i)*wi;
-      }
+    const int NB_SEGMENTS = (int)ceil((maxI - minI) / sigma_r);
+    float stepI = (maxI - minI) / NB_SEGMENTS;
+
+    GaussianBlur gaussian_blur(w, h, sigma_s);
+
+    // piecewise bilateral
+    for (int j = 0; j < NB_SEGMENTS; j++) {
+        ph.setValue(j * 100 / NB_SEGMENTS);
+        if (ph.canceled()) break;
+
+        float jI = minI + j * stepI;  // current intensity value
+
+        for (int i = 0; i < sizeZ; i++) {
+            float dI = (*Iz)(i)-jI;
+            jG(i) = exp(-(dI * dI) / (sigma_r * sigma_r));
+            jH(i) = jG(i) * I(i);
+        }
+
+        gaussian_blur.blur(jG, jK);
+        gaussian_blur.blur(jH, jH);
+
+        //    convolveArray(jG, sigma_s, jK);
+        //    convolveArray(jH, sigma_s, jH);
+
+        for (int i = 0; i < sizeZ; i++)
+            if (likely(jK(i) != 0.0f))
+                jJ(i) = jH(i) / jK(i);
+            else
+                jJ(i) = 0.0f;
+
+        //  if( downsample == 1 )
+        JJ = &jJ;  // No upsampling is necessary
+                   //    else
+                   //      upsampleArray(jJ,JJ);
+
+        if (j == 0) {
+            // if the first segment - to account for the range boundary
+            for (int i = 0; i < size; i++) {
+                if (likely(I(i) > jI + stepI)) continue;  // wi = 0;
+                if (likely(I(i) > jI)) {
+                    float wi = (stepI - (I(i) - jI)) / stepI;
+                    J(i) += (*JJ)(i)*wi;
+                } else
+                    J(i) += (*JJ)(i);
+            }
+        } else if (j == NB_SEGMENTS - 1) {
+            // if the last segment - to account for the range boundary
+            for (int i = 0; i < size; i++) {
+                if (likely(I(i) < jI - stepI)) continue;  // wi = 0;
+                if (likely(I(i) < jI)) {
+                    float wi = (stepI - (jI - I(i))) / stepI;
+                    J(i) += (*JJ)(i)*wi;
+                } else
+                    J(i) += (*JJ)(i);
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                float wi = (stepI - fabs(I(i) - jI)) / stepI;
+                if (unlikely(wi > 0.0f)) J(i) += (*JJ)(i)*wi;
+            }
+        }
     }
-  }
 
-//  delete Iz;
-//  if( downsample != 1 )
-//    delete JJ;
-  delete jJ;
-  delete jG;
-  delete jK;
-  delete jH;
+    //  delete Iz;
+    //  if( downsample != 1 )
+    //    delete JJ;
 }
