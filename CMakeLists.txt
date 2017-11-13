@@ -12,6 +12,7 @@ include(build_files/Modules/Version.cmake)
 include(build_files/Modules/GlobalSettings.cmake)
 include(build_files/Modules/CompilerSettings.cmake)
 include(build_files/Modules/Internationalization.cmake)
+include(/usr/local/lib/cmake/BoostCompute/BoostComputeConfig.cmake)
 
 IF(TIMER_PROFILING)
     ADD_DEFINITIONS(-DTIMER_PROFILING)
