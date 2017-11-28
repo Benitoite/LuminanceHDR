@@ -1406,15 +1406,12 @@ static inline float vhmax( vfloat a ) {
     return _mm_cvtss_f32(_mm_max_ss(a, _mm_shuffle_ps(a, a, 1)));
 }
 
-<<<<<<< HEAD
-=======
 static inline float vhmin( vfloat a ) {
     // returns max(a[0],a[1],a[2],a[3])
     a = vminf(a, _mm_movehl_ps(a, a));
     return _mm_cvtss_f32(_mm_min_ss(a, _mm_shuffle_ps(a, a, 1)));
 }
 
->>>>>>> d61df9d6d83fb515dee40f26174c195f28802c13
 static INLINE vfloat vmul2f(vfloat a){
     // fastest way to multiply by 2
 	return a + a;
