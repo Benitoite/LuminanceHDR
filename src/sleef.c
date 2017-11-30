@@ -1220,15 +1220,7 @@ __inline float xexpf(float d) {
 }
 
 __inline float xmul2f(float d) {
-	union {
-		float floatval;
-		int intval;
-	} uflint;
-	uflint.floatval = d;
-	if (uflint.intval & 0x7FFFFFFF) { // if f==0 do nothing
-		uflint.intval += 1 << 23; // add 1 to the exponent
-	}
-	return uflint.floatval;
+	return d + d;
 }
 
 __inline float xdiv2f(float d) {
