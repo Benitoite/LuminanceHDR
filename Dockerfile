@@ -2,7 +2,7 @@ FROM debian:testing
 
 #   add the dependencies
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential locales cmake git qt5-default libqt5webkit5-dev qt5-image-formats-plugins qtbase5-dev qtbase5-dev-tools qtbase5-private-dev libqt5svg5-dev qt5-assistant qttools5-dev qttools5-dev-tools qttools5-private-dev libexiv2-dev libfftw3-single3 libtiff5-dev libjpeg-dev libpng-dev openexr libgsl-dev libraw-dev liblcms2-dev libboost-dev libcfitsio-dev ca-certificates ssl-cert
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential locales cmake git qt5-default libqt5webkit5-dev qt5-image-formats-plugins qtbase5-dev qtbase5-dev-tools qtbase5-private-dev libqt5svg5-dev qt5-assistant qttools5-dev qttools5-dev-tools qttools5-private-dev libexiv2-dev libfftw3-dev libtiff5-dev libjpeg-dev libpng-dev openexr libgsl-dev libraw-dev liblcms2-dev libboost-dev libcfitsio-dev ca-certificates ssl-cert
 
 #   clone source code, checkout dev branch 
 
