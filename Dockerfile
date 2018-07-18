@@ -10,7 +10,7 @@ RUN mkdir -p ~/programs && git clone https://github.com/LuminanceHDR/LuminanceHD
 
 #  compile
 
-RUN mkdir ~/programs/code-lhdr/build && cd ~/programs/code-lhdr/build && cmake .. -DCMAKE_PREFIX_PATH=/usr -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON  -DCMAKE_CXX_FLAGS="-std=c++11 -Wno-deprecated-declarations -Wno-unused-result -O3 -pipe" -DCMAKE_C_FLAGS="-O3 -pipe" -DCMAKE_EXE_LINKER_FLAGS="-lc++abi" -DCMAKE_INSTALL_BINDIR:STRING="/programs" -DCMAKE_BUILD_TYPE=Release
+RUN mkdir ~/programs/code-lhdr/build && cd ~/programs/code-lhdr/build && cmake .. -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON  -DCMAKE_CXX_FLAGS="-std=c++11 -Wno-deprecated-declarations -Wno-unused-result -O3" -DCMAKE_C_FLAGS="-O3" -DCMAKE_BUILD_TYPE=Release
 RUN cd ~/programs/code-lhdr/build && make install && chmod 777 /programs/luminancehdr
 
 #   set entrypoint cmd
