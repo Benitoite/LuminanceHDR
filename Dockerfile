@@ -1,8 +1,8 @@
-FROM debian:testing
+FROM debian:experimental
 
 #   add the dependencies
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential locales pkg-config cmake git qt5-default qt5-qmake qt5-qmake-bin libqt5webkit5-dev qt5-image-formats-plugins qtbase5-dev qtbase5-dev-tools qtbase5-private-dev libqt5svg5-dev qt5-assistant qttools5-dev qttools5-dev-tools qttools5-private-dev libexiv2-dev libfftw3-dev libtiff5-dev libjpeg-dev libpng-dev libopenexr-dev libgsl-dev libraw-dev liblcms2-dev libboost-all-dev libcfitsio-dev ca-certificates ssl-cert
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential locales pkg-config cmake cmake-data autotools-dev cmake-extras git qt5-default qt5-qmake qt5-qmake-bin libqt5webkit5-dev qt5-image-formats-plugins qtbase5-dev qtbase5-dev-tools qtbase5-private-dev libqt5svg5-dev qt5-assistant qttools5-dev qttools5-dev-tools qttools5-private-dev libexiv2-dev libfftw3-dev libtiff5-dev libjpeg-dev libpng-dev libopenexr-dev libgsl-dev libraw-dev liblcms2-dev libboost-all-dev libcfitsio-dev ca-certificates ssl-cert
 
 #   clone source code, checkout dev branch 
 
@@ -11,7 +11,7 @@ RUN mkdir -p ~/programs && git clone https://github.com/LuminanceHDR/LuminanceHD
 #  compile
 
 RUN mkdir ~/programs/code-lhdr/build && cd ~/programs/code-lhdr/build && cmake .. -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON  -DCMAKE_CXX_FLAGS="-std=c++11 -Wno-deprecated-declarations -Wno-unused-result -O3" -DCMAKE_C_FLAGS="-O3" -DCMAKE_BUILD_TYPE=Release
-# RUN cd ~/programs/code-lhdr/build && make -j2 install
+RUN cd ~/programs/code-lhdr/build && make -j2 install
 
 #   set entrypoint cmd
 
