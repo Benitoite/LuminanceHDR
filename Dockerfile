@@ -11,9 +11,9 @@ RUN mkdir -p ~/programs && git clone https://github.com/LuminanceHDR/LuminanceHD
 #  compile
 
 RUN mkdir ~/programs/code-lhdr/build && cd ~/programs/code-lhdr/build && cmake .. -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON  -DCMAKE_CXX_FLAGS="-std=c++11 -Wno-deprecated-declarations -Wno-unused-result -O3" -DCMAKE_C_FLAGS="-O3" -DCMAKE_BUILD_TYPE=Release
-RUN cd ~/programs/code-lhdr/build && make -j4 install
+# RUN cd ~/programs/code-lhdr/build && make -j2 install
 
 #   set entrypoint cmd
 
 LABEL maintainer="kd6kxr@gmail.com"
-CMD echo "This is a test..." && /usr/local/luminancehdr && echo "...THATS ALL FOLKS!!!"
+CMD echo "This is a test..." && /usr/bin/luminance-hdr && echo "...THATS ALL FOLKS!!!"
