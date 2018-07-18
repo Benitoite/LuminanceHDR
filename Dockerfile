@@ -2,7 +2,7 @@ FROM debian:testing
 
 #   add the dependencies
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential locales cmake git qt5-default libexiv2-dev libfftw3-single3 libtiff5-dev libjpeg-dev libpng-dev openexr libgsl-dev libraw-dev liblcms2-dev libboost-dev libcfitsio-dev
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential locales cmake git qt5-default libexiv2-dev libfftw3-single3 libtiff5-dev libjpeg-dev libpng-dev openexr libgsl-dev libraw-dev liblcms2-dev libboost-dev libcfitsio-dev ca-certificates ssl-cert
 
 #   clone source code, checkout dev branch 
 
