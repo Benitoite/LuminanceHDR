@@ -1,3 +1,11 @@
+# Docker Commands
+===============
+
+```
+docker run -e DISPLAY=192.168.0.100:0 -e QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb -v /tmp/X11-unix=/tmp/X11-unix -v ~:/hi:private -it --user $(id -u):$(id -g) -e QT_DEBUG_PLUGINS=1 --rm kd6kxr/luminancehdr:dock1
+```
+
+
 # Luminance HDR
 ===============
 
