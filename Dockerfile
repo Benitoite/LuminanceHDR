@@ -1,8 +1,8 @@
-FROM debian:experimental
+FROM debian:latest
 
 #   add the dependencies
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential locales pkg-config cmake cmake-data autotools-dev cmake-extras clang-7 clang-format-7 clang-tidy-7 libomp-7-dev git qt5-default qt5-qmake qt5-qmake-bin libqt5webkit5-dev qt5-image-formats-plugins qtbase5-dev qtbase5-dev-tools qtbase5-private-dev libqt5svg5-dev qt5-assistant qttools5-dev qttools5-dev-tools qttools5-private-dev libexiv2-dev libfftw3-dev libtiff5-dev libjpeg-dev libpng-dev libopenexr-dev libgsl-dev libraw-dev liblcms2-dev libboost-all-dev libcfitsio-dev qtwebengine5-dev-tools qtwebengine5-private-dev qtwebengine5-dev libqt5webenginewidgets5  libqt5webenginecore5 libqt5webengine5 libqt5webengine-data ca-certificates ssl-cert
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential locales pkg-config cmake cmake-data libqt5sql5-sqlite libqt5sql5-mysql  autotools-dev cmake-extras clang-7 clang-format-7 clang-tidy-7 libomp-7-dev git qt5-default qt5-qmake qt5-qmake-bin libqt5webkit5-dev qt5-image-formats-plugins qtbase5-dev qtbase5-dev-tools qtbase5-private-dev libqt5svg5-dev qt5-assistant qttools5-dev qttools5-dev-tools qttools5-private-dev libexiv2-dev libfftw3-dev libtiff5-dev libjpeg-dev libpng-dev libopenexr-dev libgsl-dev libraw-dev liblcms2-dev libboost-all-dev libcfitsio-dev qtwebengine5-dev-tools qtwebengine5-private-dev qtwebengine5-dev libqt5webenginewidgets5  libqt5webenginecore5 libqt5webengine5 libqt5webengine-data ca-certificates ssl-cert
 
 #   clone source code, checkout dev branch 
 
