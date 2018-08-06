@@ -17,4 +17,4 @@ RUN cd ~/programs/code-lhdr/build && make -j2 install
 #   set entrypoint cmd
 
 LABEL maintainer="kd6kxr@gmail.com"
-CMD echo "This is a test..." && /usr/local/bin/luminance-hdr && echo "...THATS ALL FOLKS!!!"
+CMD echo "This is a test..." && LD_LIBRARY_PATH=/opt/local/Qt/lib /usr/local/bin/luminance-hdr && echo "...THATS ALL FOLKS!!!"
