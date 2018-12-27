@@ -5,6 +5,17 @@ CMAKE_POLICY(SET CMP0054 NEW)
 CMAKE_POLICY(SET CMP0053 NEW)
 PROJECT("Luminance HDR")
 
+# assume built-in pthreads on MacOS
+IF(APPLE)
+    enable_language(CXX)
+    enable_language(C)
+    set(CMAKE_THREAD_LIBS_INIT "-lpthread")
+    set(CMAKE_HAVE_THREADS_LIBRARY 1)
+    set(CMAKE_USE_WIN32_THREADS_INIT 0)
+    set(CMAKE_USE_PTHREADS_INIT 1)
+    set(THREADS_PREFER_PTHREAD_FLAG ON)
+ENDIF()
+
 # set include path for FindXXX.cmake files
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/build_files/Modules")
 
@@ -29,9 +40,9 @@ include( CheckCXXSourceCompiles )
 check_cxx_source_compiles( "int main() { int x = 0; if( __builtin_expect((x),0) ) x = 1; return 0; }" HAS_BRANCH_PREDICTION )
 
 if( HAS_BRANCH_PREDICTION )
-  set( BRANCH_PREDICTION 1 )
+    set( BRANCH_PREDICTION 1 )
 else( HAS_BRANCH_PREDICTION )
-  set( BRANCH_PREDICTION 0 )
+    set( BRANCH_PREDICTION 0 )
 endif( HAS_BRANCH_PREDICTION )
 
 # find and setup Qt5 for this project
@@ -68,8 +79,16 @@ IF(WIN32)
 ENDIF(WIN32)
 
 set(LIBS ${LIBS}
-    ${QT_QTCORE_LIBRARIES}     ${QT_QTGUI_LIBRARIES}  ${QT_QTNETWORK_LIBRARIES}
-    ${QT_QTWEBENGINE_LIBRARIES} ${QT_QTXML_LIBRARIES} ${QT_QTSQL_LIBRARIES})
+    ${QT_QTCORE_LIBRARIES}  ${QT_QTGUI_LIBRARIES}  ${QT_QTNETWORK_LIBRARIES}
+    ${QT_QTXML_LIBRARIES}   ${QT_QTSQL_LIBRARIES})
+
+if(Qt5WebEngineCore_FOUND)
+    message(STATUS "Building with QtWebEngine")
+    set(LIBS ${LIBS} ${QT_QTWEBENGINE_LIBRARIES})
+else()
+    message(STATUS "Building with QtWebKit")
+    set(LIBS ${LIBS} ${QT_QTWEBKIT_LIBRARIES})
+endif()
 
 FIND_PACKAGE(Git)
 IF(GIT_FOUND)
@@ -135,7 +154,6 @@ ELSE()
     FIND_PACKAGE(lcms2 REQUIRED)
     INCLUDE_DIRECTORIES(${LCMS2_INCLUDE_DIR})
 ENDIF()
-
 
 IF(WIN32)
     SET(Boost_USE_STATIC_LIBS ON)
@@ -277,25 +295,25 @@ IF(APPLE)
     SET_SOURCE_FILES_PROPERTIES(${LUMINANCE_QT_QM} PROPERTIES MACOSX_PACKAGE_LOCATION Resources/i18n)
 
     # QT magic
-    qt5_use_modules(${LHDR_OSX_EXECUTABLE_TARGET} Core Gui Widgets)
-    qt5_use_modules(luminance-hdr-cli Core Gui Widgets)
+    TARGET_LINK_LIBRARIES(${LHDR_OSX_EXECUTABLE_TARGET} Qt5::Core Qt5::Gui Qt5::Widgets)
+    TARGET_LINK_LIBRARIES(luminance-hdr-cli Qt5::Core Qt5::Gui Qt5::Widgets)
 
     # Link libraries
     TARGET_LINK_LIBRARIES(${LHDR_OSX_EXECUTABLE_TARGET} ${LUMINANCE_MODULES_GUI} ${LIBS})
     TARGET_LINK_LIBRARIES(luminance-hdr-cli             ${LUMINANCE_MODULES_CLI} ${LIBS})
-    
+
     # Rename generated executable binary to luminance-hdr
     add_custom_command(
     TARGET ${LHDR_OSX_EXECUTABLE_TARGET}
     POST_BUILD
     COMMAND mv ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/MacOS/${LHDR_OSX_EXECUTABLE_NAME} ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/MacOS/luminance-hdr
     )
-    
+
     # Copy align_image_stack into bundle/Contents/MacOS
     FILE(COPY
-    	${CMAKE_SOURCE_DIR}/build_files/platforms/macosx/align_image_stack
-    	DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/MacOS
-    	FILE_PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE WORLD_EXECUTE
+        ${CMAKE_SOURCE_DIR}/build_files/platforms/macosx/align_image_stack
+        DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/MacOS
+        FILE_PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE WORLD_EXECUTE
     )
 
     # Copy help/icons/hdrhtml and qt.conf to bundle resources
@@ -311,8 +329,46 @@ IF(APPLE)
          ${CMAKE_SOURCE_DIR}/README.md
          ${CMAKE_SOURCE_DIR}/LICENSE
          ${CMAKE_SOURCE_DIR}/Changelog
-         DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app
+         DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents
     )
+
+    # Copy align_image_stack dependencies to bundle
+    FILE(COPY
+         ${CMAKE_SOURCE_DIR}/build_files/platforms/macosx/Libraries
+         DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents
+    )
+
+    # Install Boost libs
+    file(MAKE_DIRECTORY ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/Frameworks)
+    file(COPY
+        ${Boost_SYSTEM_LIBRARY_RELEASE} DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/Frameworks)
+    file(COPY
+        ${Boost_THREAD_LIBRARY_RELEASE} DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/Frameworks)
+    file(COPY
+        ${Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE} DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/Frameworks)
+    file(COPY
+        ${Boost_CHRONO_LIBRARY_RELEASE}  DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/Frameworks)
+    file(COPY
+        ${Boost_DATE_TIME_LIBRARY_RELEASE}  DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/Frameworks)
+    file(COPY
+        ${Boost_ATOMIC_LIBRARY_RELEASE} DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents/Frameworks)
+    add_custom_command(
+        TARGET ${LHDR_OSX_EXECUTABLE_TARGET}
+        POST_BUILD
+        COMMAND install_name_tool -change libboost_system.dylib @rpath/libboost_system.dylib *.app/Contents/MacOS/luminance-hdr &&
+        install_name_tool -change libboost_thread.dylib @rpath/libboost_thread.dylib *.app/Contents/MacOS/luminance-hdr &&
+        install_name_tool -change libboost_program_options.dylib @rpath/libboost_program_options.dylib *.app/Contents/MacOS/luminance-hdr &&
+        install_name_tool -change libboost_chrono.dylib @rpath/libboost_chrono.dylib *.app/Contents/MacOS/luminance-hdr &&
+        install_name_tool -change libboost_date_time.dylib @rpath/libboost_date_time.dylib *.app/Contents/MacOS/luminance-hdr &&
+        install_name_tool -change libboost_atomic.dylib @rpath/libboost_atomic.dylib *.app/Contents/MacOS/luminance-hdr &&
+        install_name_tool -change libboost_system.dylib @rpath/libboost_system.dylib *.app/Contents/Frameworks/libboost_chrono.dylib &&
+        install_name_tool -change libboost_system.dylib @rpath/libboost_system.dylib *.app/Contents/Frameworks/libboost_thread.dylib &&
+        install_name_tool -change libboost_system.dylib @rpath/libboost_system.dylib *.app/Contents/MacOS/luminance-hdr-cli &&
+        install_name_tool -change libboost_thread.dylib @rpath/libboost_thread.dylib *.app/Contents/MacOS/luminance-hdr-cli &&
+        install_name_tool -change libboost_program_options.dylib @rpath/libboost_program_options.dylib *.app/Contents/MacOS/luminance-hdr-cli &&
+        install_name_tool -change libboost_chrono.dylib @rpath/libboost_chrono.dylib *.app/Contents/MacOS/luminance-hdr-cli &&
+        install_name_tool -change libboost_date_time.dylib @rpath/libboost_date_time.dylib *.app/Contents/MacOS/luminance-hdr-cli &&
+        install_name_tool -change libboost_atomic.dylib @rpath/libboost_atomic.dylib *.app/Contents/MacOS/luminance-hdr-cli)
 
 # Unix
 ELSEIF(UNIX)
@@ -321,8 +377,8 @@ ELSEIF(UNIX)
     ADD_EXECUTABLE(luminance-hdr ${LUMINANCE_FILES})
     ADD_EXECUTABLE(luminance-hdr-cli ${LUMINANCE_FILES})
 
-    qt5_use_modules(luminance-hdr Core Gui Widgets)
-    qt5_use_modules(luminance-hdr-cli Core Gui Widgets)
+    TARGET_LINK_LIBRARIES(luminance-hdr Qt5::Core Qt5::Gui Qt5::Widgets)
+    TARGET_LINK_LIBRARIES(luminance-hdr-cli Qt5::Core Qt5::Gui Qt5::Widgets)
 
     # link libraries
     TARGET_LINK_LIBRARIES(luminance-hdr -Xlinker --start-group ${LUMINANCE_MODULES_GUI} -Xlinker --end-group)
@@ -337,14 +393,14 @@ ELSEIF(UNIX)
     #INSTALL(FILES ${LUMINANCE_QT_QM} DESTINATION share/luminance-hdr/i18n) # i18n
 
     INSTALL(FILES ${CMAKE_SOURCE_DIR}/program-icons/luminance-hdr.png DESTINATION share/icons/hicolor/48x48/apps) # icon
-    INSTALL(FILES ${CMAKE_SOURCE_DIR}/luminance-hdr.desktop DESTINATION share/applications) #desktop entry
-    INSTALL(FILES ${CMAKE_SOURCE_DIR}/luminance-hdr.appdata.xml DESTINATION share/appdata) #appstream
+    INSTALL(FILES ${CMAKE_SOURCE_DIR}/net.sourceforge.qtpfsgui.LuminanceHDR.desktop DESTINATION share/applications) #desktop entry
+    INSTALL(FILES ${CMAKE_SOURCE_DIR}/net.sourceforge.qtpfsgui.LuminanceHDR.appdata.xml DESTINATION share/appdata) #appstream
     INSTALL(FILES
     ${CMAKE_SOURCE_DIR}/AUTHORS
     ${CMAKE_SOURCE_DIR}/README.md
     ${CMAKE_SOURCE_DIR}/LICENSE
     ${CMAKE_SOURCE_DIR}/Changelog
-    DESTINATION share/luminance-hdr) #info files
+    DESTINATION share/luminance-hdr/doc) #info files
     INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/help DESTINATION share/luminance-hdr) # help directory
     INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/hdrhtml DESTINATION share/luminance-hdr) # hdrhtml directory
 # Microsoft Windows
@@ -412,8 +468,8 @@ ELSEIF(WIN32)
         ADD_EXECUTABLE(luminance-hdr WIN32 ${LUMINANCE_FILES})
         ADD_EXECUTABLE(luminance-hdr-cli ${LUMINANCE_FILES})
 
-        qt5_use_modules(luminance-hdr Core Gui Widgets WinExtras Svg)
-        qt5_use_modules(luminance-hdr-cli Core Gui Widgets)
+        TARGET_LINK_LIBRARIES(luminance-hdr Qt5::Core Qt5::Gui Qt5::Widgets Qt5::WinExtras Qt5::Svg)
+        TARGET_LINK_LIBRARIES(luminance-hdr-cli Qt5::Core Qt5::Gui Qt5::Widgets)
 
         # link libraries
         TARGET_LINK_LIBRARIES(luminance-hdr -Xlinker --start-group ${LUMINANCE_MODULES_GUI} -Xlinker --end-group)

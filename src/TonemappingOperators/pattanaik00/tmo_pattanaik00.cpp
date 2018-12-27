@@ -38,6 +38,7 @@
 #include "Libpfs/array2d.h"
 #include "Libpfs/pfs.h"
 #include "Libpfs/progress.h"
+#include "Libpfs/utils/msec_timer.h"
 #include "TonemappingOperators/pfstmo.h"
 #include "../../sleef.c"
 #include "../../opthelper.h"
@@ -70,9 +71,11 @@ float pow6(float x) {
     return (x*x) * (x*x) * (x*x);
 }
 
+#ifdef __SSE2__
 vfloat pow6(vfloat x) {
     return (x*x) * (x*x) * (x*x);
 }
+#endif
 
 float pow4(float x) {
     return (x*x) * (x*x);
@@ -236,6 +239,10 @@ float calculateLocalAdaptation(const pfs::Array2Df &Y, int x, int y) {
 void tmo_pattanaik00(pfs::Array2Df &R, pfs::Array2Df &G, pfs::Array2Df &B,
                      const pfs::Array2Df &Y, VisualAdaptationModel *am,
                      bool local, pfs::Progress &ph) {
+#ifdef TIMER_PROFILING
+    msec_timer stop_watch;
+    stop_watch.start();
+#endif
 
     ///--- initialization of parameters
     /// cones level of adaptation
@@ -390,6 +397,12 @@ void tmo_pattanaik00(pfs::Array2Df &R, pfs::Array2Df &G, pfs::Array2Df &B,
 
     }
     ph.setValue(98);
+#ifdef TIMER_PROFILING
+    stop_watch.stop_and_update();
+    cout << endl;
+    cout << "tmo_pattanaik00 = " << stop_watch.get_time() << " msec" << endl;
+#endif
+
 }
 
 ///////////////////////////////////////////////////////////
@@ -491,7 +504,7 @@ float VisualAdaptationModel::calculateLogAvgLuminance(const pfs::Array2Df &Y) {
 
     float avLum = 0.0f;
 
-    int size = Y.getCols() * Y.getRows();
+    size_t size = Y.getCols() * Y.getRows();
 #ifdef _OPENMP
     #pragma omp parallel
 #endif
@@ -504,8 +517,8 @@ float VisualAdaptationModel::calculateLogAvgLuminance(const pfs::Array2Df &Y) {
 #ifdef _OPENMP
     #pragma omp for nowait
 #endif
-    for (int y = 0; y < Y.getRows(); ++y) {
-        int x = 0;
+    for (size_t y = 0; y < Y.getRows(); ++y) {
+        size_t x = 0;
 #ifdef __SSE2__
         for (; x < Y.getCols() - 3; x+=4) {
             avLumThrv += xlogf(LVFU(Y(x,y)) + c1v);

@@ -33,7 +33,6 @@
 
 #include "Libpfs/exception.h"
 #include "Libpfs/frame.h"
-#include "Libpfs/manip/gamma.h"
 #include "Libpfs/progress.h"
 #include "tmo_ferradans11.h"
 
@@ -51,9 +50,10 @@ void pfstmo_ferradans11(pfs::Frame &frame, float opt_rho, float opt_inv_alpha,
     std::cout << ss.str() << std::endl;
 #endif
 
+    ph.setValue(0);
+
     pfs::Channel *inR, *inG, *inB;
     frame.getXYZChannels(inR, inG, inB);
-    //---
 
     if (inR == NULL || inG == NULL || inB == NULL)
         throw pfs::Exception("Missing X, Y, Z channels in the PFS stream");

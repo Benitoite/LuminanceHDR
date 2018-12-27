@@ -109,7 +109,7 @@
 namespace {
 QString getLdrFileNameFromSaveDialog(const QString &suggestedFileName,
                                      QWidget *parent = 0) {
-    static QString filetypes = QObject::tr("All LDR formats");
+    QString filetypes = QObject::tr("All LDR formats");
     filetypes += QLatin1String(
         " (*.jpg *.jpeg *.png *.ppm *.pbm *.bmp *.JPG *.JPEG *.PNG *.PPM *.PBM "
         "*.BMP);;");
@@ -214,56 +214,6 @@ MainWindow::MainWindow(pfs::Frame *curr_frame, const QString &new_file,
 }
 
 MainWindow::~MainWindow() {
-    sm_NumMainWindows--;
-
-#ifdef QT_DEBUG
-    qDebug() << "MainWindow::~MainWindow() = " << sm_NumMainWindows;
-#endif
-
-    if (sm_NumMainWindows == 0) {
-        // Last MainWindow is dead...
-        LuminanceOptions().setValue(QStringLiteral("MainWindowState"),
-                                    saveState());
-        LuminanceOptions().setValue(QStringLiteral("MainWindowGeometry"),
-                                    saveGeometry());
-        LuminanceOptions().setValue(QStringLiteral("MainWindowSplitterState"),
-                                    m_centralwidget_splitter->saveState());
-        LuminanceOptions().setValue(
-            QStringLiteral("MainWindowSplitterGeometry"),
-            m_centralwidget_splitter->saveGeometry());
-        LuminanceOptions().setValue(
-            QStringLiteral("MainWindowBottomSplitterState"),
-            m_bottom_splitter->saveState());
-        LuminanceOptions().setValue(
-            QStringLiteral("MainWindowBottomSplitterGeometry"),
-            m_bottom_splitter->saveGeometry());
-
-        sm_updateChecker.reset();
-    } else {
-        sm_mainWindowMap.take(m_winId);
-        int winId = sm_mainWindowMap.firstKey();
-        MainWindow *p = sm_mainWindowMap[winId];
-        disconnect(sm_updateChecker.data(), &UpdateChecker::updateAvailable, p,
-                   &MainWindow::onUpdateAvailable);
-        sm_updateChecker->setParent(p);
-        connect(sm_updateChecker.data(), &UpdateChecker::updateAvailable, p,
-                &MainWindow::onUpdateAvailable);
-    }
-
-    // Let's close all threads
-    m_IOThread->quit();  // should be idle, quit() ok
-    m_IOThread->wait();
-    if (!m_TMProgressBar->isTerminated())  // MainWindow closed while
-                                           // tonemapping is running
-    {
-        m_TMProgressBar->requestTermination();
-    }
-    m_TMThread->quit();
-    m_TMThread->wait();
-    m_QueueThread->quit();  // should be idle, quit() ok
-    m_QueueThread->wait();
-
-    clearRecentFileActions();
 }
 
 void MainWindow::init() {
@@ -1230,14 +1180,18 @@ void MainWindow::load_success(pfs::Frame *new_hdr_frame,
         if (!qfileinfo.exists()) {
             // it doesn't exist on the file system, so I have just got back a
             // file from some creational operation (new hdr, crop...)
-
             m_inputFilesName = inputFileNames;
             QFileInfo fi1(m_inputFilesName.first());
-            QFileInfo fi2(m_inputFilesName.last());
 
-            m_outputFileNamePrefix =
-                fi1.completeBaseName() + "-" + fi2.completeBaseName();
+            if (m_inputFilesName.first() != m_inputFilesName.last()) {
+                QFileInfo fi2(m_inputFilesName.last());
 
+                m_outputFileNamePrefix =
+                    fi1.completeBaseName() + "-" + fi2.completeBaseName();
+            }
+            else {
+                m_outputFileNamePrefix = fi1.completeBaseName();
+            }
             // newhdr->setFileName(QString(tr("Untitled")));
             newhdr->setFileName(m_outputFileNamePrefix);
             m_tabwidget->addTab(newhdr, QString(new_fname).prepend("(*) "));
@@ -1459,17 +1413,62 @@ void MainWindow::changeEvent(QEvent *event) {
 }
 
 void MainWindow::closeEvent(QCloseEvent *event) {
-    if (sm_NumMainWindows == 1) {
+    if (!maybeSave()) {
+        event->ignore();
+        return;
+    }
+    sm_NumMainWindows--;
+    if (sm_NumMainWindows == 0) {
         if (sm_helpBrowser) {
             sm_helpBrowser->close();
         }
     }
 
-    if (maybeSave()) {
-        event->accept();
+    if (sm_NumMainWindows == 0) {
+        // Last MainWindow is dead...
+        LuminanceOptions().setValue(QStringLiteral("MainWindowState"),
+                                    saveState());
+        LuminanceOptions().setValue(QStringLiteral("MainWindowGeometry"),
+                                    saveGeometry());
+        LuminanceOptions().setValue(QStringLiteral("MainWindowSplitterState"),
+                                    m_centralwidget_splitter->saveState());
+        LuminanceOptions().setValue(
+            QStringLiteral("MainWindowSplitterGeometry"),
+            m_centralwidget_splitter->saveGeometry());
+        LuminanceOptions().setValue(
+            QStringLiteral("MainWindowBottomSplitterState"),
+            m_bottom_splitter->saveState());
+        LuminanceOptions().setValue(
+            QStringLiteral("MainWindowBottomSplitterGeometry"),
+            m_bottom_splitter->saveGeometry());
+
+        sm_updateChecker.reset();
     } else {
-        event->ignore();
+        sm_mainWindowMap.take(m_winId);
+        int winId = sm_mainWindowMap.firstKey();
+        MainWindow *p = sm_mainWindowMap[winId];
+        disconnect(sm_updateChecker.data(), &UpdateChecker::updateAvailable, p,
+                   &MainWindow::onUpdateAvailable);
+        sm_updateChecker->setParent(p);
+        connect(sm_updateChecker.data(), &UpdateChecker::updateAvailable, p,
+                &MainWindow::onUpdateAvailable);
     }
+
+    // Let's close all threads
+    m_IOThread->quit();  // should be idle, quit() ok
+    m_IOThread->wait();
+    if (!m_TMProgressBar->isTerminated())  // MainWindow closed while
+                                           // tonemapping is running
+    {
+        m_TMProgressBar->requestTermination();
+    }
+    m_TMThread->quit();
+    m_TMThread->wait();
+    m_QueueThread->quit();  // should be idle, quit() ok
+    m_QueueThread->wait();
+
+    clearRecentFileActions();
+    QMainWindow::closeEvent(event);
 }
 
 bool MainWindow::event(QEvent *event) {

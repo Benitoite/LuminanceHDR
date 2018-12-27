@@ -42,6 +42,7 @@
 using namespace mai;
 
 void pfstmo_mai11(pfs::Frame &frame, pfs::Progress &ph) {
+
 #ifndef NDEBUG
     std::stringstream ss;
     ss << "pfstmo_mai11 (";
@@ -50,6 +51,8 @@ void pfstmo_mai11(pfs::Frame &frame, pfs::Progress &ph) {
 #endif
 
     //--- default tone mapping parameters;
+
+    ph.setValue(0);
 
     CompressionTMO tmo;
 

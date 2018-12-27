@@ -31,10 +31,110 @@ p, li { espaço-em-branco: pré-envoltório; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:11pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt; color:#55aaff;&quot;&gt;Luminance HDR&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Create and tone-map HDR images.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;(c) 2006-2009 Giuseppe Rota&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;(c) 2010-2018 Franco Comida, Davide Anastasia&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/LuminanceHDR/LuminanceHDR&quot;&gt;&lt;span style=&quot; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;https://github.com/LuminanceHDR/LuminanceHDR&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/UI/about.ui" line="125"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:8pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;DEVELOPERS&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Main developer of QtPfsGui&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Giuseppe Rota, &lt;/span&gt;&lt;a href=&quot;mailto:grota@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;grota@users.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Main Developers of Luminance HDR&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Franco Comida, &lt;/span&gt;&lt;a href=&quot;mailto:fcomida@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;fcomida@users.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Davide Anastasia, &lt;/span&gt;&lt;a href=&quot;mailto:davideanastasia@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;davideanastasia@users.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Improvements, bugfixing&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Daniel Kaneider, &lt;/span&gt;&lt;a href=&quot;mailto:danielkaneider@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;danielkaneider@users.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Ingo Weyrich, &lt;/span&gt;&lt;a href=&quot;mailto:heckflosse67@gmx.de&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;heckflosse67@gmx.de&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;pfs{tools|calibration|tmo} codebase&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Grzegorz Krawczyk, &lt;/span&gt;&lt;a href=&quot;mailto:krawczyk@mpi-sb.mpg.de&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;krawczyk@mpi-sb.mpg.de&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Rafal Mantiuk, &lt;/span&gt;&lt;a href=&quot;mailto:mantiuk@mpi-sb.mpg.de&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;mantiuk@mpi-sb.mpg.de&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;G.Ward&apos;s Mean Threshold Bitmap (MTB) algorithm&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Nicholas Phillips, &lt;/span&gt;&lt;a href=&quot;mailto:ngphillips@gmail.com&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;ngphillips@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;CONTRIBUTORS&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Arne Hagenah&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Ignacy Gawedzki&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Jean-Christophe Frisch, &lt;/span&gt;&lt;a href=&quot;mailto:natureh.510@gmail.com&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;natureh.510@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Maciej Dworak, &lt;/span&gt;&lt;a href=&quot;https://github.com/Beep6581&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;https://github.com/Beep6581&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;PACKAGE MAINTAINERS&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Linux:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;    Fedora&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Franco Comida&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;    FreeBSD: &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;Joao Rocha Braga Filho, Bertrand Petit and Steffen Beyer&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Gentoo&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Rene Zbinden&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;    OpenSUSE&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Peter Linnell, Rauch Christian&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;macOS&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Robin Mills, &lt;/span&gt;&lt;a href=&quot;mailto:robin@clanmills.com&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;robin@clanmills.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Richard Barber, &lt;/span&gt;&lt;a href=&quot;https://github.com/Benitoite&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;https://github.com/Benitoite&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Windows&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;TRANSLATORS&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;a href=&quot;https://www.transifex.com/luminance-hdr/teams/&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;Luminance HDR translation team&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt; at Transifex&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Chinese&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Lei Zhao&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Czech&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Jan Gemela&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;French&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Cyril Lavier&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;German&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Christian Raue&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Norwegian&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Åsmund Ødegård, &lt;/span&gt;&lt;a href=&quot;mailto:mandus@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;mandus@users.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Polish&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Maciej Dziardziel&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Romanian&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Andrei Răcăşan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Russian&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Alexandre Prokoudine, &lt;/span&gt;&lt;a href=&quot;mailto:alexandre.prokoudine@gmail.com&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;alexandre.prokoudine@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Spanish&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Alberto Garcia&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Turkish&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;: Mustafa Günay&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/UI/about.ui" line="202"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:8pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The community on &lt;/span&gt;&lt;a href=&quot;https://discuss.pixls.us/c/software/luminancehdr&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;Pixls.us&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The community on &lt;/span&gt;&lt;a href=&quot;https://www.flickr.com/groups/qtpfsgui/&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#32a4e6;&quot;&gt;Flickr&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Hugin&apos;s align_image_stack and more&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Pablo D&apos;Angelo&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;DCRaw&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Dave Coffin&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;And also&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Erik Ouchterlony&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Antoine Latter&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Frank Boehme&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Sloan Poe&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;    Elizabeth Oldham&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:12pt; font-weight:600; color:#0078dc;&quot;&gt;Luminance HDR&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt; — HDR imaging workflow application&lt;br /&gt;(c) 2006-2009, Giuseppe Rota&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;(c) 2010-2017, Franco Comida, Davide Anastasia&lt;br /&gt;&lt;/span&gt;&lt;a href=&quot;http://qtpfsgui.sourceforge.net&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; text-decoration: underline; color:#0078dc;&quot;&gt;http://qtpfsgui.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { espaço-em-branco: pré-envoltório; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -42,60 +142,9 @@ p, li { espaço-em-branco: pré-envoltório; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;(c) 2010-2017, Franco Comida, Davide Anastasia&lt;br /&gt;&lt;/span&gt;&lt;a href=&quot;http://qtpfsgui.sourceforge.net&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; text-decoration: underline; color:#0078dc;&quot;&gt;http://qtpfsgui.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/UI/about.ui" line="111"/>
+        <location filename="../src/UI/about.ui" line="116"/>
         <source>A&amp;uthors</source>
         <translation>Á%utores </translation>
-    </message>
-    <message>
-        <location filename="../src/UI/about.ui" line="120"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:8pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;Please &lt;/span&gt;&lt;a href=&quot;mailto:davideanastasia@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;let me know&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;, if I forgot to add someone to this list.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Main developer QtPfsGui&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;   Giuseppe Rota&lt;br /&gt;   &lt;/span&gt;&lt;a href=&quot;mailto:grota@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;grota@users.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Main Developers Luminance HDR&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;    Franco Comida&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;a href=&quot;mailto:fcomida@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;fcomida@users.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;    Davide Anastasia&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;a href=&quot;mailto:davideanastasia@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;davideanastasia@users.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;    &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Improvements, bugfixing&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;    Daniel Kaneider&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;    &lt;/span&gt;&lt;a href=&quot;mailto:danielkaneider@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;danielkaneider@users.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;pfs{tools|calibration|tmo} codebase&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Grzegorz Krawczyk&lt;br /&gt;   &lt;/span&gt;&lt;a href=&quot;mailto:krawczyk@mpi-sb.mpg.de&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;krawczyk@mpi-sb.mpg.de&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   &lt;br /&gt;   Rafal Mantiuk&lt;br /&gt;   &lt;/span&gt;&lt;a href=&quot;mailto:mantiuk@mpi-sb.mpg.de&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;mantiuk@mpi-sb.mpg.de &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;G.Ward&apos;s Mean Threshold Bitmap (MTB) algorithm &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Nicholas Phillips&lt;br /&gt;   &lt;/span&gt;&lt;a href=&quot;ngphillips@gmail.com&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;ngphillips@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Mac OS X Maintainer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;Robin Mills&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;   &lt;/span&gt;&lt;a href=&quot;mailto:robin@clanmills.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;robin@clanmills.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#2980b9;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;The Luminance HDR translation team at Transifex&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   &lt;/span&gt;&lt;a href=&quot;https://www.transifex.com/luminance-hdr/teams/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#2980b9;&quot;&gt;Team&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Russian translator, usability fixes, user manual, .desktop file&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Alexandre Prokoudine&lt;br /&gt;   &lt;/span&gt;&lt;a href=&quot;alexandre.prokoudine@gmail.com&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;alexandre.prokoudine@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Norwegian translator&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Åsmund Ødegård&lt;br /&gt;   &lt;/span&gt;&lt;a href=&quot;mandus@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; text-decoration: underline; color:#0078dc;&quot;&gt;mandus@users.sourceforge.net&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Turkish translator&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Mustafa GÜNAY&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;French translator&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Cyril Lavier&lt;br /&gt;   &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Spanish translator&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Alberto Garcia&lt;br /&gt;   &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;German translator&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Christian Raue&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Czech translator&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Jan Gemela&lt;br /&gt;   &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Polish translator&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Maciej Dziardziel&lt;br /&gt;   &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Romanian translator&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;   Andrei Răcăşan&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Chinese translator&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;   Lei Zhao&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FreeBSD patches and maintainers&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;Joao Rocha Braga Filho, Bertrand Petit and Steffen Beyer&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/UI/about.ui" line="168"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:8pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;Please &lt;/span&gt;&lt;a href=&quot;mailto:grota@users.sourceforge.net&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; text-decoration: underline; color:#0078dc;&quot;&gt;let me know&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;, if I forgot to add someone to this list.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;br /&gt;T&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;he community on&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.flickr.com/groups/qtpfsgui/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#2980b9;&quot;&gt;Flickr&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; text-decoration: underline; color:#2980b9;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;he community on &lt;/span&gt;&lt;a href=&quot;https://discuss.pixls.us/c/software/luminancehdr&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#2980b9;&quot;&gt;Pixls.us&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; text-decoration: underline; color:#2980b9;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Hugin&apos;s &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-style:italic;&quot;&gt;align_image_stack&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt; and more&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;  Pablo D&apos;Angelo&lt;br /&gt;  &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Opensuse 10.2 and 10.3 packager&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;  Peter Linnell&lt;br /&gt;   &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Fedora packager and bug reports&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;  Douglas E. Warner&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;openSUSE 10.2 packager&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;  Rauch Christian&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Gentoo Linux Ebuild&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;  Rene Zbinden&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Various suggestions&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;  Arne Hagenah&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Tiff LDR bugfixes and suggestion&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;  Ignacy Gawedzki&lt;br /&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;DCRaw&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;  Dave Coffin&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;And also&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400;&quot;&gt;&lt;br /&gt;  Erik Ouchterlony&lt;br /&gt;  Antoine Latter&lt;br /&gt;  Frank Boehme&lt;br /&gt;  Sloan Poe&lt;br /&gt;  Elizabeth Oldham &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -148,7 +197,7 @@ p, li { espaço-em-branco: pré-envoltório; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-weight:600;&quot;&gt;FreeBSD patches e mantenedores&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;&lt;br /&gt;Joao Rocha Braga Filho, Bertrand Petit and Steffen Beyer&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/UI/about.ui" line="159"/>
+        <location filename="../src/UI/about.ui" line="193"/>
         <source>&amp;Thanks To</source>
         <translation>Agradecemos à</translation>
     </message>
@@ -177,17 +226,17 @@ p, li { espaço-em-branco: pré-envoltório; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-weight:600;&quot;&gt;E também&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;&lt;br /&gt;  Erik Ouchterlony&lt;br /&gt;  Antoine Latter&lt;br /&gt;  Frank Boehme&lt;br /&gt;  Sloan Poe&lt;br /&gt;  Elizabeth Oldham &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/UI/about.ui" line="189"/>
+        <location filename="../src/UI/about.ui" line="229"/>
         <source>Changelog</source>
         <translation>Alterar o Registro</translation>
     </message>
     <message>
-        <location filename="../src/UI/about.ui" line="199"/>
+        <location filename="../src/UI/about.ui" line="239"/>
         <source>&amp;License Agreement</source>
         <translation>&amp;Licenciamento</translation>
     </message>
     <message>
-        <location filename="../src/UI/about.ui" line="252"/>
+        <location filename="../src/UI/about.ui" line="292"/>
         <source>&amp;OK</source>
         <translation>&amp;OK</translation>
     </message>
@@ -2377,44 +2426,57 @@ ERRO: %2</translation>
     </message>
 </context>
 <context>
+    <name>HdrPreview</name>
+    <message>
+        <location filename="../src/HdrWizard/HdrPreview.ui" line="14"/>
+        <source>HDR Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/HdrWizard/HdrPreview.ui" line="54"/>
+        <source>Close</source>
+        <translation type="unfinished">Fechar</translation>
+    </message>
+</context>
+<context>
     <name>HdrViewer</name>
     <message>
-        <location filename="../src/Viewers/HdrViewer.cpp" line="109"/>
+        <location filename="../src/Viewers/HdrViewer.cpp" line="112"/>
         <source>&amp;Mapping:</source>
         <translation>&amp;Mapeamento:</translation>
     </message>
     <message>
-        <location filename="../src/Viewers/HdrViewer.cpp" line="110"/>
+        <location filename="../src/Viewers/HdrViewer.cpp" line="113"/>
         <source>Histogram:</source>
         <translation>Histograma:</translation>
     </message>
     <message>
-        <location filename="../src/Viewers/HdrViewer.cpp" line="118"/>
+        <location filename="../src/Viewers/HdrViewer.cpp" line="121"/>
         <source>Linear</source>
         <translation>Linear</translation>
     </message>
     <message>
-        <location filename="../src/Viewers/HdrViewer.cpp" line="118"/>
+        <location filename="../src/Viewers/HdrViewer.cpp" line="121"/>
         <source>Gamma 1.4</source>
         <translation>Gamma 1.4</translation>
     </message>
     <message>
-        <location filename="../src/Viewers/HdrViewer.cpp" line="118"/>
+        <location filename="../src/Viewers/HdrViewer.cpp" line="121"/>
         <source>Gamma 1.8</source>
         <translation>Gamma 1.8</translation>
     </message>
     <message>
-        <location filename="../src/Viewers/HdrViewer.cpp" line="119"/>
+        <location filename="../src/Viewers/HdrViewer.cpp" line="122"/>
         <source>Gamma 2.2</source>
         <translation>Gamma 2.2</translation>
     </message>
     <message>
-        <location filename="../src/Viewers/HdrViewer.cpp" line="119"/>
+        <location filename="../src/Viewers/HdrViewer.cpp" line="122"/>
         <source>Gamma 2.6</source>
         <translation>Gamma 2.6</translation>
     </message>
     <message>
-        <location filename="../src/Viewers/HdrViewer.cpp" line="119"/>
+        <location filename="../src/Viewers/HdrViewer.cpp" line="122"/>
         <source>Logarithmic</source>
         <translation>Logarítmico</translation>
     </message>
@@ -2562,12 +2624,12 @@ p, li { white-space: pre-wrap; }
         <translation>[2/2] Escolha Configurações para Criação de HDR</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="656"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="844"/>
         <source>Profile</source>
         <translation>Perfil</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="675"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="876"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -2580,213 +2642,223 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;O primeiro perfil pré-definido na lista geralmente leva a resultados melhores. Mude somente se a imagem HDR resultante não for boa o suficiente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="683"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="884"/>
         <source>Profile 1</source>
         <translation>Perfil 1 </translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="688"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="889"/>
         <source>Profile 2</source>
         <translation>Perfil 2 </translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="693"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="894"/>
         <source>Profile 3</source>
         <translation>Perfil 3 </translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="698"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="899"/>
         <source>Profile 4</source>
         <translation>Perfil 4 </translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="703"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="904"/>
         <source>Profile 5</source>
         <translation>Perfil 5 </translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="708"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="909"/>
         <source>Profile 6</source>
         <translation>Perfil 6 </translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="716"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="917"/>
         <source>Use this only if the default profiles above do not yield good results</source>
         <translation>Use somente se os perfis padrão acima não produzirem bons resultados</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="719"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="920"/>
         <source>Use Custom Configuration</source>
         <translation>Use a Configuração Personalizada</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="732"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="702"/>
         <source>HDR Creation Model</source>
         <translation>Modelo de Criação HDR:</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="749"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="940"/>
         <source>Debevec</source>
         <translation>Debevec</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="754"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="945"/>
         <source>Robertson (Simple)</source>
         <translation>Robertson (Simples)</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="759"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="950"/>
         <source>Robertson (Response Recovery)</source>
         <translation>Robertson (Recuperação Responsiva)</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="770"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="744"/>
         <source>Weighting Function</source>
         <translation>Função de Ponderação:</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="790"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="821"/>
         <source>Triangular</source>
         <translation>Triangular</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="795"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="826"/>
         <source>Gaussian</source>
         <translation>Gaussian</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="800"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="831"/>
         <source>Plateau</source>
         <translation>Plateau</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="805"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="836"/>
         <source>Flat</source>
         <translation>Plano</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="816"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="860"/>
         <source>Response Curve</source>
         <translation>Curva de Resposta</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="839"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="783"/>
         <source>Linear</source>
         <translation>Linear</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="844"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="788"/>
         <source>Gamma</source>
         <translation>Gamma</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="849"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="793"/>
         <source>Log</source>
         <translation>Registro</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="854"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="798"/>
         <source>sRGB</source>
         <translation>sRGB</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="859"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="803"/>
         <source>Custom</source>
         <translation>Personalizado</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="870"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="757"/>
         <source>Response Curve Input File</source>
         <translation>Arquivo de Entrada da Curva de Resposta </translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="899"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="731"/>
         <source>Response Curve Output File</source>
         <translation>Arquivo de Saída da Curva de Resposta</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="930"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="687"/>
         <source>Save As...</source>
         <translation>Salvar como...</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="945"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="656"/>
         <source>Save Settings</source>
         <translation>Salvar Configurações</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="1006"/>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="1100"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="960"/>
+        <source>show result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="972"/>
+        <source>Show HDR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="1030"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="1173"/>
         <source>Hide Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="1019"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="1043"/>
         <source>&amp;Next &gt;</source>
         <translation>&amp;Próximo &gt;</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.ui" line="1029"/>
+        <location filename="../src/HdrWizard/HdrWizard.ui" line="1053"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Cancelar </translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="114"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="117"/>
         <source>Image Filename</source>
         <translation>Nome do Arquivo de Imagem</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="114"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="117"/>
         <source>Exposure</source>
         <translation>Exposição</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="212"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="215"/>
         <source>All formats (*.jpeg *.jpg *.tiff *.tif *.crw *.cr2 *.nef *.dng *.mrw *.orf *.kdc *.dcr *.arw *.raf *.ptx *.pef *.x3f *.raw *.sr2 *.rw2 *.3fr *.mef *.mos *.erf *.nrw *.srw</source>
         <translation>Todos os formatos (*.jpeg *.jpg *.tiff *.tif *.crw *.cr2 *.nef *.dng *.mrw *.orf *.kdc *.dcr *.arw *.raf *.ptx *.pef *.x3f *.raw *.sr2 *.rw2 *.3fr *.mef *.mos *.erf *.nrw *.srw</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="216"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="219"/>
         <source>*.JPEG *.JPG *.TIFF *.TIF *.CRW *.CR2 *.NEF *.DNG *.MRW *.ORF *.KDC *.DCR *.ARW *.RAF *.PTX *.PEF *.X3F *.RAW *.SR2 *.RW2 *.3FR *.MEF *.MOS *.ERF *.NRW *.SRW);;</source>
         <translation>*.JPEG *.JPG *.TIFF *.TIF *.CRW *.CR2 *.NEF *.DNG *.MRW *.ORF *.KDC *.DCR *.ARW *.RAF *.PTX *.PEF *.X3F *.RAW *.SR2 *.RW2 *.3FR *.MEF *.MOS *.ERF *.NRW *.SRW);;</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="220"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="223"/>
         <source>JPEG (*.jpeg *.jpg *.JPEG *.JPG);;</source>
         <translation>JPEG (*.jpeg *.jpg *.JPEG *.JPG);;</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="221"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="224"/>
         <source>TIFF Images (*.tiff *.tif *.TIFF *.TIF);;</source>
         <translation>TIFF Images (*.tiff *.tif *.TIFF *.TIF);;</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="223"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="226"/>
         <source>RAW Images (*.crw *.cr2 *.nef *.dng *.mrw *.orf *.kdc *.dcr *.arw *.raf *.ptx *.pef *.x3f *.raw *.sr2 *.rw2 *.3fr *.mef *.mos *.erf *.nrw *.srw</source>
         <translation>Imagens RAW  (*.crw *.cr2 *.nef *.dng *.mrw *.orf *.kdc *.dcr *.arw *.raf *.ptx *.pef *.x3f *.raw *.sr2 *.rw2 *.3fr *.mef *.mos *.erf *.nrw *.srw</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="226"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="229"/>
         <source>*.CRW *.CR2 *.NEF *.DNG *.MRW *.ORF *.KDC *.DCR *.ARW *.RAF *.PTX *.PEF *.X3F *.RAW *.SR2 *.RW2 *.3FR *.MEF *.MOS *.ERF *.NRW *.SRW)</source>
         <translation>*.CRW *.CR2 *.NEF *.DNG *.MRW *.ORF *.KDC *.DCR *.ARW *.RAF *.PTX *.PEF *.X3F *.RAW *.SR2 *.RW2 *.3FR *.MEF *.MOS *.ERF *.NRW *.SRW)</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="231"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="234"/>
         <source>Select the input images</source>
         <translation>Selecione as imagens de entrada</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="277"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="280"/>
         <source>Unknown</source>
         <translation>Desconhecido</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="449"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="452"/>
         <source>Loading...</source>
         <translation>Carregando...</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="487"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="490"/>
         <source>&lt;font color=&quot;#FF0000&quot;&gt;&lt;h3&gt;&lt;b&gt;WARNING:&lt;/b&gt;&lt;/h3&gt;&lt;/font&gt; Luminance HDR was not able to find the relevant &lt;b&gt;EXIF&lt;/b&gt; tags for the following images:&lt;ul&gt;</source>
         <translation>&lt;font color=&quot;#FF0000&quot;&gt;&lt;h3&gt;&lt;b&gt;AVISO:&lt;/b&gt;&lt;/h3&gt;&lt;/font&gt; Luminance HDR não foi capaz de encontrar o relevante &lt;b&gt;EXIF&lt;/b&gt; etiquetas para as imagens seguintes:&lt;ul&gt;</translation>
     </message>
@@ -2795,115 +2867,125 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;/ul&gt;&lt;hr&gt;Você ainda pode continuar criando um HDR. Para fazer isso você tem que inserir&lt;b&gt;manualmente&lt;/b&gt; o EV (valor de exposição) ou valores de diferença de interrupção&lt;hr&gt;Se você quiser Luminance HDR para fazer isso &lt;b&gt;automaticamente&lt;/b&gt;, você tem que carregar as imagens que tenham, pelo menos, os seguintes dados exif: &lt;ul&gt;&lt;li&gt;Viés de Exposição&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;b&gt;HINT:&lt;/b&gt;Perder dados EXIF ​​geralmente acontece quando você pré-processa suas imagens.&lt;br&gt;Você pode executar uma &lt;b&gt;cópia de um-para-outro dos dados exif&lt;/b&gt;entre dois conjuntos de imagens através da &lt;b&gt;Ferramentas-&gt; Copiar Dados Exif ...&lt;/b&gt; item de menu.</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="519"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="522"/>
         <source>EXIF data not found</source>
         <translation>Dados EXIF ​​não encontrados</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="537"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="540"/>
         <source>&lt;center&gt;&lt;font color=&quot;#008400&quot;&gt;&lt;h3&gt;&lt;b&gt;Images Loaded.&lt;/b&gt;&lt;/h3&gt;&lt;/font&gt;&lt;/center&gt;</source>
         <translation>&lt;center&gt;&lt;font color=&quot;#008400&quot;&gt;&lt;h3&gt;&lt;b&gt;Imagens Carregadas.&lt;/b&gt;&lt;/h3&gt;&lt;/font&gt;&lt;/center&gt;</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="968"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="1041"/>
         <source>&lt;center&gt;&lt;h3&gt;&lt;b&gt;To proceed you need to manually set the exposure values.&lt;br&gt;&lt;font color=&quot;#FF0000&quot;&gt;%1&lt;/font&gt; values still required.&lt;/b&gt;&lt;/h3&gt;&lt;/center&gt;</source>
         <translation>&lt;center&gt;&lt;h3&gt;&lt;b&gt;Para continuar você precisa configurar manualmente os valores de exposição.&lt;br&gt;&lt;font color=&quot;#FF0000&quot;&gt;%1&lt;/font&gt; valores ainda requeridos.&lt;/b&gt;&lt;/h3&gt;&lt;/center&gt;</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="560"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="563"/>
         <source>Loading Error: </source>
         <translation>Erro ao carregar:</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="497"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="500"/>
         <source>&lt;/ul&gt;&lt;hr&gt;Luminance HDR has inserted those values for you, two stops apart.&lt;br&gt; If the guess is correct you can proceed creating the HDR, otherwise you have to &lt;b&gt;manually&lt;/b&gt; correct the EVs (exposure values) or stop difference values. &lt;hr&gt;To avoid this warning in the future you must load images that have at least the following exif data: &lt;ul&gt;&lt;li&gt;Shutter Speed (seconds)&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;Aperture (F-Number)&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;Exposure Bias&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;b&gt;HINT:&lt;/b&gt; Losing EXIF data usually happens when you preprocess your pictures.&lt;br&gt;You can perform a &lt;b&gt;one-to-one copy of the exif data&lt;/b&gt; between two sets of images via the &lt;b&gt;Tools-&gt;Copy Exif Data...&lt;/b&gt; menu item.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="518"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="521"/>
         <source>Do not show this message again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="542"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="545"/>
         <source>&lt;center&gt;&lt;font color=&quot;#ffaa00&quot;&gt;&lt;h3&gt;&lt;b&gt;Please check that all exposure values are correct before proceedings.&lt;/h3&gt;&lt;/font&gt;&lt;/center&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="568"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="571"/>
         <source>Start loading a set of images with different exposure</source>
         <translation>Inicie o carregamento de um conjunto de imagens com diferentes exposições</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="595"/>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="603"/>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="612"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="598"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="606"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="615"/>
         <source>Error...</source>
         <translation>Erro...</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="596"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="599"/>
         <source>Failed to start external application &quot;&lt;em&gt;align_image_stack&lt;/em&gt;&quot;.&lt;br&gt;Please read &quot;Help -&gt; Contents... -&gt; Setting up -&gt; External Tools&quot; for more information.</source>
         <translation>Falha ao iniciar a aplicação externa &quot;&lt;em&gt;align_image_stack&lt;/em&gt;&quot;.&lt;br&gt;Por favor, leia &quot;Ajuda -&gt; Conteúdo ... -&gt; Configuração -&gt; Ferramentas externas&quot; para obter mais informações.</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="604"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="607"/>
         <source>The external application &quot;&lt;em&gt;align_image_stack&lt;/em&gt;&quot; crashed...</source>
         <translation>A aplicação externa &quot;&lt;em&gt;align_image_stack&lt;/em&gt;&quot; caiu...</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="613"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="616"/>
         <source>An unknown error occurred while executing the &quot;&lt;em&gt;align_image_stack&lt;/em&gt;&quot; application...</source>
         <translation>Ocorreu um erro desconhecido durante a execução do &quot;&lt;em&gt;align_image_stack&lt;/em&gt;&quot; aplicação...</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="630"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="633"/>
         <source>Now click on next button</source>
         <translation>Agora clique no próximo botão</translation>
     </message>
     <message>
         <location filename="../src/HdrWizard/HdrWizard.cpp" line="649"/>
+        <source>Compute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="652"/>
+        <source>Finish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="669"/>
         <source>Aligning...</source>
         <translation>Alinhando... </translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="756"/>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="778"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="825"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="847"/>
         <source>&amp;Finish</source>
         <translation>&amp;Finalizar</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="785"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="854"/>
         <source>Load camera response curve file</source>
         <translation>Carga do arquivo curva de resposta da câmara</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="786"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="855"/>
         <source>Camera response curve (*.m);;All Files (*)</source>
         <translation>Curva de resposta da câmera (* .m);; Todos os arquivos (*)</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="804"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="873"/>
         <source>Invalid Response Curve File</source>
         <translation>Arquivo Curva de Resposta Inválido</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="805"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="874"/>
         <source>Invalid Response Curve File: please try a different file</source>
         <translation>Arquivo Curva de Resposta Inválido: tente um arquivo diferente</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="813"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="882"/>
         <source>Save a camera response curve file</source>
         <translation>Salvar um arquivo curva de resposta da câmera</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="814"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="883"/>
         <source>Camera response curve (*.m)</source>
         <translation>Curva de resposta da câmera (*.m)</translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="1100"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="1173"/>
         <source>Show Log</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2920,7 +3002,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished"> - Modelo: </translation>
     </message>
     <message>
-        <location filename="../src/HdrWizard/HdrWizard.cpp" line="963"/>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="1036"/>
         <source>&lt;center&gt;&lt;font color=&quot;#008400&quot;&gt;&lt;h3&gt;&lt;b&gt;All the EV values have been set.&lt;br&gt;Now click on Next button.&lt;/b&gt;&lt;/h3&gt;&lt;/font&gt;&lt;/center&gt;</source>
         <translation>&lt;center&gt;&lt;font color=&quot;#008400&quot;&gt;&lt;h3&gt;&lt;b&gt;
 Todos os valores de EV foram definidos.&lt;br&gt;Agora clique no botão Avançar.&lt;/b&gt;&lt;/h3&gt;&lt;/font&gt;&lt;/center&gt;</translation>
@@ -2935,7 +3017,7 @@ Todos os valores de EV foram definidos.&lt;br&gt;Agora clique no botão Avançar
     </message>
     <message>
         <location filename="../src/HelpBrowser/HelpBrowser.ui" line="38"/>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="383"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="364"/>
         <source>&amp;File</source>
         <translation>&amp;Arquivo</translation>
     </message>
@@ -2961,7 +3043,7 @@ Todos os valores de EV foram definidos.&lt;br&gt;Agora clique no botão Avançar
     </message>
     <message>
         <location filename="../src/HelpBrowser/HelpBrowser.ui" line="101"/>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="388"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="369"/>
         <source>&amp;Print...</source>
         <translation>&amp;Imprimir...</translation>
     </message>
@@ -2977,7 +3059,7 @@ Todos os valores de EV foram definidos.&lt;br&gt;Agora clique no botão Avançar
     </message>
     <message>
         <location filename="../src/HelpBrowser/HelpBrowser.ui" line="122"/>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="390"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="371"/>
         <source>&amp;Find...</source>
         <translation>&amp;Localizar...</translation>
     </message>
@@ -3008,7 +3090,7 @@ Todos os valores de EV foram definidos.&lt;br&gt;Agora clique no botão Avançar
     </message>
     <message>
         <location filename="../src/HelpBrowser/HelpBrowser.ui" line="150"/>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="396"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="377"/>
         <source>&amp;Add Bookmark</source>
         <translation>&amp;Adicionar Favorito</translation>
     </message>
@@ -3024,7 +3106,7 @@ Todos os valores de EV foram definidos.&lt;br&gt;Agora clique no botão Avançar
     </message>
     <message>
         <location filename="../src/HelpBrowser/HelpBrowser.ui" line="167"/>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="398"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="379"/>
         <source>D&amp;elete All</source>
         <translation>E&amp;xcluir Tudol</translation>
     </message>
@@ -3094,94 +3176,94 @@ Todos os valores de EV foram definidos.&lt;br&gt;Agora clique no botão Avançar
         <translation>I&amp;mprimir Pré-visualização</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="285"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="273"/>
         <source>Help SideBar</source>
         <translation>Ajuda Barra Lateral</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="381"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="362"/>
         <source>LuminanceHDR Online Help</source>
         <translation>LuminanceHDR Ajuda Online</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="384"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="365"/>
         <source>&amp;Edit</source>
         <translation>&amp;Editar</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="385"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="366"/>
         <source>&amp;View</source>
         <translation>E&amp;xibir</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="386"/>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="395"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="367"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="376"/>
         <source>&amp;Bookmarks</source>
         <translation>&amp;Favoritos</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="389"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="370"/>
         <source>&amp;Quit</source>
         <translation>&amp;Sair</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="391"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="372"/>
         <source>Find &amp;Next</source>
         <translation>Localizar &amp;Avançar...</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="392"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="373"/>
         <source>Find &amp;Previous</source>
         <translation>Localizar &amp;Retornar...</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="393"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="374"/>
         <source>&amp;Contents</source>
         <translation>&amp;Conteúdo</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="394"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="375"/>
         <source>&amp;Search</source>
         <translation>&amp;Busca</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="397"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="378"/>
         <source>&amp;Delete</source>
         <translation>&amp;Excluir</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="514"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="487"/>
         <source>Find</source>
         <translation>Localizar</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="514"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="487"/>
         <source>Search Term:</source>
         <translation>Termo de Pesquisa:</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="541"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="514"/>
         <source>New Bookmark</source>
         <translation>Novo Favorito</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="542"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="515"/>
         <source>New Bookmark&apos;s Title:</source>
         <translation>Novo Título do Favorito:</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="735"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="712"/>
         <source>&lt;h2&gt;&lt;p&gt;Sorry, no manual is installed!&lt;/p&gt;&lt;p&gt;Please contact your package provider or LuminanceHDR team if you built the application yourself&lt;/p&gt;&lt;/h2&gt;</source>
         <comment>HTML message for no documentation available to show</comment>
         <translation>&lt;h2&gt;&lt;p&gt;Desculpe, nenhum manual está instalado!&lt;/p&gt;&lt;p&gt;Entre em contato com seu provedor de pacote ou equipe LuminanceHDR se construiu sua própria aplicação&lt;/p&gt;&lt;/h2&gt;</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="803"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="780"/>
         <source>LuminanceHDR - Help Browser</source>
         <translation>LuminanceHDR - Navegador de Ajuda</translation>
     </message>
     <message>
-        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="804"/>
+        <location filename="../src/HelpBrowser/helpbrowser.cpp" line="781"/>
         <source>This protocol is not handled by the help browser.
 Do you want to open the link with the default application 
 associated with the protocol?</source>
@@ -5238,62 +5320,62 @@ p, li { white-space: pre-wrap; }
         <translation>Não consigo executar a transformação de cor. Por favor seleccione outro perfil de monitor.</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="419"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="457"/>
         <source>Triangular</source>
         <translation>Triangular</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="421"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="459"/>
         <source>Plateau</source>
         <translation>Plateau</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="423"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="461"/>
         <source>Gaussian</source>
         <translation>Gaussian</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="425"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="463"/>
         <source>Flat</source>
         <translation>Plano</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="434"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="472"/>
         <source>Linear</source>
         <translation>Linear</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="436"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="474"/>
         <source>Gamma</source>
         <translation>Gamma</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="438"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="476"/>
         <source>Logarithmic</source>
         <translation>Logarítmico</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="440"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="478"/>
         <source>sRGB</source>
         <translation>sRGB</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="442"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="480"/>
         <source>From Calibration/Input File</source>
         <translation>De Calibração/Arquivo de Entrada</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="406"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="444"/>
         <source>Debevec</source>
         <translation>Debevec</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="408"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="446"/>
         <source>Robertson</source>
         <translation>Robertson</translation>
     </message>
     <message>
-        <location filename="../src/Common/CommonFunctions.cpp" line="410"/>
+        <location filename="../src/Common/CommonFunctions.cpp" line="448"/>
         <source>Robertson Response Calculation</source>
         <translation>Robertson Cálculo Responsivo</translation>
     </message>
@@ -5486,12 +5568,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/Common/LuminanceOptions.cpp" line="739"/>
+        <location filename="../src/Common/LuminanceOptions.cpp" line="778"/>
         <source>Option -v -a...</source>
         <translation>Opção -v -a...</translation>
     </message>
     <message>
-        <location filename="../src/Common/LuminanceOptions.cpp" line="740"/>
+        <location filename="../src/Common/LuminanceOptions.cpp" line="779"/>
         <source>LuminanceHDR requires align_image_stack to be executed with the &quot;-v&quot; and without the &quot;-a&quot; options. Command line options have been corrected.</source>
         <translation>LuminanceHDR requer align_image_stack a ser executado nas opções com &quot;v&quot; e sem &quot;-a&quot; . Opções de linha de comando foram corrigidos.</translation>
     </message>
@@ -5575,6 +5657,27 @@ p, li { white-space: pre-wrap; }
 Error: %1</source>
         <translation type="unfinished">O banco de dados usado para salvar os parâmetros TM não pode ser aberto.
 Erro: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="1014"/>
+        <location filename="../src/BatchHDR/BatchHDRDialog.cpp" line="461"/>
+        <location filename="../src/MainCli/commandline.cpp" line="838"/>
+        <source>Weights= </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="1016"/>
+        <location filename="../src/BatchHDR/BatchHDRDialog.cpp" line="463"/>
+        <location filename="../src/MainCli/commandline.cpp" line="841"/>
+        <source> - Response curve= </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/HdrWizard/HdrWizard.cpp" line="1018"/>
+        <location filename="../src/BatchHDR/BatchHDRDialog.cpp" line="465"/>
+        <location filename="../src/MainCli/commandline.cpp" line="844"/>
+        <source> - Model= </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

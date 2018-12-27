@@ -66,8 +66,8 @@ void calculateLuminance(pfs::Array2Df *Y, float &avLum, float &maxLum,
 #ifdef _OPENMP
     #pragma omp for nowait
 #endif
-    for (int y = 0; y < Y->getRows(); ++y) {
-        int x = 0;
+    for (size_t y = 0; y < Y->getRows(); ++y) {
+        size_t x = 0;
 #ifdef __SSE2__
         for (; x < Y->getCols() - 3; x+=4) {
             vfloat Yv = LVFU((*Y)(x, y));
@@ -111,6 +111,8 @@ void pfstmo_ashikhmin02(pfs::Frame &frame, bool simple_flag, float lc_value,
     std::cout << ", eq: " << eq << ")" << std::endl;
 #endif
 
+    ph.setValue(0);
+
     pfs::Channel *Xr, *Yr, *Zr;
     frame.getXYZChannels(Xr, Yr, Zr);
     assert(Xr != NULL);
@@ -148,9 +150,7 @@ void pfstmo_ashikhmin02(pfs::Frame &frame, bool simple_flag, float lc_value,
         }
     }
 
-    if (!ph.canceled()) {
-        ph.setValue(100);
-    }
-
     pfs::transformColorSpace(pfs::CS_XYZ, Xr, Yr, Zr, pfs::CS_RGB, Xr, Yr, Zr);
+
+    ph.setValue(100);
 }

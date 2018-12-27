@@ -32,6 +32,7 @@
 
 #include "tmo_reinhard05.h"
 #include "Libpfs/progress.h"
+#include "Libpfs/utils/msec_timer.h"
 #include "TonemappingOperators/pfstmo.h"
 
 #include <assert.h>
@@ -113,10 +114,10 @@ void computeLuminanceProperties(const float *samples, size_t width, size_t heigh
 #endif
         for (; x < width; ++x) {
             float value = samples[y * width + x];
-            min_lum = std::min(min_lum, value);
-            max_lum = std::max(max_lum, value);
-            avg_lum += value;
-            adapted_lum += xlogf(2.3e-5f + value);
+            min_lumthr = std::min(min_lumthr, value);
+            max_lumthr = std::max(max_lumthr, value);
+            avg_lumthr += value;
+            adapted_lumthr += xlogf(2.3e-5f + value);
         }
     }
 #ifdef _OPENMP
@@ -264,6 +265,10 @@ void normalizeChannel(float *samples, size_t width, size_t height, float min, fl
 void tmo_reinhard05(size_t width, size_t height, float *nR, float *nG,
                     float *nB, const float *nY, const Reinhard05Params &params,
                     pfs::Progress &ph) {
+#ifdef TIMER_PROFILING
+    msec_timer stop_watch;
+    stop_watch.start();
+#endif
 
     float Cav[] = {0.0f, 0.0f, 0.0f};
 
@@ -309,4 +314,11 @@ void tmo_reinhard05(size_t width, size_t height, float *nR, float *nG,
 
     // normalize BLUE channel
     normalizeChannel(nB, width, height, min_col, max_col);
+
+#ifdef TIMER_PROFILING
+    stop_watch.stop_and_update();
+    cout << endl;
+    cout << "tmo_reinhard05 = " << stop_watch.get_time() << " msec" << endl;
+#endif
+
 }

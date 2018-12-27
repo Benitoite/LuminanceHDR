@@ -36,6 +36,7 @@
 
 #include <boost/math/special_functions/fpclassify.hpp>
 
+#include "Libpfs/utils/msec_timer.h"
 #include "Libpfs/frame.h"
 #include "Libpfs/progress.h"
 #include "TonemappingOperators/pfstmo.h"
@@ -73,8 +74,8 @@ void calculateLuminance(unsigned int width, unsigned int height, const float *Y,
     vfloat avLumThrv = ZEROV;
 #endif // __SSE2__
     #pragma omp for nowait
-    for(int i = 0; i < height; ++i) {
-        int j = 0;
+    for(size_t i = 0; i < height; ++i) {
+        size_t j = 0;
 #ifdef __SSE2__
         for (; j < width - 3; j+=4) {
             vfloat Ywv = LVFU(Y[i * width + j]);
@@ -90,8 +91,10 @@ void calculateLuminance(unsigned int width, unsigned int height, const float *Y,
     }
 #pragma omp critical
 {
+#ifdef __SSE2__
     avLumv += avLumThrv;
     maxLumv = vmaxf(maxLumv, maxLumThrv);
+#endif
     avLum += avLumThr;
     maxLum = std::max(maxLum, maxLumThr);
 }
@@ -107,6 +110,10 @@ void tmo_drago03(const pfs::Array2Df &Y, pfs::Array2Df &L, float maxLum,
                  float avLum, float bias, pfs::Progress &ph) {
     assert(Y.getRows() == L.getRows());
     assert(Y.getCols() == L.getCols());
+#ifdef TIMER_PROFILING
+    msec_timer stop_watch;
+    stop_watch.start();
+#endif
 
     // normalize maximum luminance by average luminance
     maxLum /= avLum;
@@ -148,4 +155,10 @@ void tmo_drago03(const pfs::Array2Df &Y, pfs::Array2Df &L, float maxLum,
         }
     }
     }
+#ifdef TIMER_PROFILING
+    stop_watch.stop_and_update();
+    cout << endl;
+    cout << "tmo_drago03 = " << stop_watch.get_time() << " msec" << endl;
+#endif
+
 }

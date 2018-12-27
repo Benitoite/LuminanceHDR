@@ -37,6 +37,7 @@
 #include <iostream>
 #include <vector>
 
+#include "Libpfs/utils/msec_timer.h"
 #include "Libpfs/array2d.h"
 #include "Libpfs/rt_algo.h"
 #include "Libpfs/progress.h"
@@ -99,6 +100,10 @@ R output = r*exp(log(output intensity)), etc.
 void tmo_durand02(pfs::Array2Df &R, pfs::Array2Df &G, pfs::Array2Df &B,
                   float sigma_s, float sigma_r, float baseContrast,
                   int downsample, bool color_correction, pfs::Progress &ph) {
+#ifdef TIMER_PROFILING
+    msec_timer stop_watch;
+    stop_watch.start();
+#endif
 
     int w = R.getCols();
     int h = R.getRows();
@@ -108,7 +113,9 @@ void tmo_durand02(pfs::Array2Df &R, pfs::Array2Df &G, pfs::Array2Df &B,
     pfs::Array2Df BASE(w, h);    // base layer
 
     float min_pos = 1e10f;  // minimum positive value (to avoid log(0))
+#ifdef __SSE2__
     vfloat min_posv = F2V(1e10f);
+#endif
 
 #ifdef _OPENMP
 #pragma omp parallel
@@ -149,10 +156,14 @@ void tmo_durand02(pfs::Array2Df &R, pfs::Array2Df &G, pfs::Array2Df &B,
 #endif
 {
     min_pos = std::min(min_pos, min_posthr);
+#ifdef __SSE2__
     min_posv = vminf(min_posv, min_posthrv);
+#endif
 }
 }
+#ifdef __SSE2__
     min_pos = std::min(min_pos, vhmin(min_posv));
+#endif
 
 #ifdef _OPENMP
 #pragma omp parallel
@@ -281,7 +292,12 @@ void tmo_durand02(pfs::Array2Df &R, pfs::Array2Df &G, pfs::Array2Df &B,
         }
     }
 
-    if (!ph.canceled()) {
-        ph.setValue(100);
-    }
+    ph.setValue(99);
+
+#ifdef TIMER_PROFILING
+    stop_watch.stop_and_update();
+    cout << endl;
+    cout << "tmo_durand02 = " << stop_watch.get_time() << " msec" << endl;
+#endif
+
 }

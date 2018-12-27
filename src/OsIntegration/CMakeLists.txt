@@ -26,10 +26,10 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
 QT5_WRAP_CPP(FILES_MOC ${FILES_H})
 # QT5_WRAP_UI(FILES_UI_H ${FILES_UI})
 
-ADD_LIBRARY(osintegration ${FILES_H} ${FILES_CPP} ${FILES_MOC} ${FILES_HXX}) # ${FILES_UI_H}
-qt5_use_modules(osintegration Core Gui Widgets)
+ADD_LIBRARY(osintegration STATIC ${FILES_H} ${FILES_CPP} ${FILES_MOC} ${FILES_HXX}) # ${FILES_UI_H}
+TARGET_LINK_LIBRARIES(osintegration Qt5::Core Qt5::Gui Qt5::Widgets)
 IF(WIN32)
-qt5_use_modules(osintegration WinExtras)
+TARGET_LINK_LIBRARIES(osintegration Qt5::WinExtras)
 ENDIF()
 
 SET(FILES_TO_TRANSLATE ${FILES_TO_TRANSLATE} ${FILES_CPP} ${FILES_H} ${FILES_HXX} PARENT_SCOPE) # ${FILES_UI}

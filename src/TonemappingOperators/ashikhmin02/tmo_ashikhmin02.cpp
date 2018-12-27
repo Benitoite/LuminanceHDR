@@ -32,6 +32,7 @@
 
 #include "Libpfs/array2d.h"
 #include "Libpfs/frame.h"
+#include <Libpfs/utils/msec_timer.h>
 #include "Libpfs/progress.h"
 #include "pyramid.h"
 #include "tmo_ashikhmin02.h"
@@ -43,13 +44,13 @@
 
 //-------------------------------------------
 
-float calc_LAL_interpolated(GaussianPyramid *myPyramid, int x, int y, int s) {
+float calc_LAL_interpolated(GaussianPyramid *myPyramid, size_t x, size_t y, int s) {
     float ratio = myPyramid->p[s - 1].lambda;
 
     float newX = (float)x * ratio;
     float newY = (float)y * ratio;
-    int X_int = (int)newX;
-    int Y_int = (int)newY;
+    size_t X_int = (size_t)newX;
+    size_t Y_int = (size_t)newY;
 
     float dx, dy, omdx, omdy;
     dx = newX - (float)X_int;
@@ -57,8 +58,8 @@ float calc_LAL_interpolated(GaussianPyramid *myPyramid, int x, int y, int s) {
     dy = newY - (float)Y_int;
     omdy = 1.f - dy;
 
-    int w = myPyramid->p[s - 1].GP->getCols();
-    int h = myPyramid->p[s - 1].GP->getRows();
+    size_t w = myPyramid->p[s - 1].GP->getCols();
+    size_t h = myPyramid->p[s - 1].GP->getRows();
 
     float g;
     if (X_int < w - 1 && Y_int < h - 1) {
@@ -161,6 +162,11 @@ void Normalize(pfs::Array2Df *lum_map, int nrows, int ncols) {
 int tmo_ashikhmin02(pfs::Array2Df *Y, pfs::Array2Df *L, float maxLum,
                     float minLum, float /*avLum*/, bool simple_flag,
                     float lc_value, int eq, pfs::Progress &ph) {
+#ifdef TIMER_PROFILING
+    msec_timer stop_watch;
+    stop_watch.start();
+#endif
+
     assert(Y != NULL);
     assert(L != NULL);
 
@@ -227,6 +233,8 @@ int tmo_ashikhmin02(pfs::Array2Df *Y, pfs::Array2Df *L, float maxLum,
 
     delete myPyramid;
 
+    ph.setValue(66);
+
     // TM function
     float div = C(maxLum) - C(minLum);
     div = div != 0 ? div : EPSILON;
@@ -265,6 +273,12 @@ int tmo_ashikhmin02(pfs::Array2Df *Y, pfs::Array2Df *L, float maxLum,
     }
 
     Normalize(L, nrows, ncols);
+
+#ifdef TIMER_PROFILING
+    stop_watch.stop_and_update();
+    cout << endl;
+    cout << "tmo_ashikhmin02 = " << stop_watch.get_time() << " msec" << endl;
+#endif
 
     return 0;
 }
