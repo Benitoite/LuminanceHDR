@@ -6,7 +6,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
 
 #   clone source code, checkout dev branch 
 
-RUN mkdir -p ~/programs && git clone https://github.com/LuminanceHDR/LuminanceHDR.git ~/programs/code-lhdr && cd ~/programs/code-lhdr && git checkout master
+RUN mkdir -p ~/programs && git clone https://github.com/LuminanceHDR/LuminanceHDR.git ~/programs/code-lhdr && cd ~/programs/code-lhdr && git checkout 2.6.1
 
 #  compile
 
