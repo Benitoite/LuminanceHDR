@@ -2,7 +2,7 @@ FROM kd6kxr/buildqt
 
 #   add the dependencies
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential locales pkg-config cmake cmake-data libgl1-mesa-dri libgl1-mesa-dev libglu1-mesa-dev autotools-dev libomp-dev git libexiv2-dev libfftw3-dev libtiff5-dev libjpeg-dev libpng-dev libopenexr-dev libgsl-dev libraw-dev liblcms2-dev libboost-all-dev libcfitsio-dev ca-certificates ssl-cert && apt-get clean
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential locales pkg-config cmake cmake-data libeigen3-dev libgl1-mesa-dri libgl1-mesa-dev libglu1-mesa-dev autotools-dev libomp-dev git libexiv2-dev libfftw3-dev libtiff5-dev libjpeg-dev libpng-dev libopenexr-dev libgsl-dev libraw-dev liblcms2-dev libboost-all-dev libcfitsio-dev ca-certificates ssl-cert && apt-get clean
 
 #   clone source code, checkout dev branch 
 
