@@ -10,7 +10,7 @@ RUN mkdir -p ~/programs && git clone https://github.com/LuminanceHDR/LuminanceHD
 
 #  compile
 
-RUN export QT=/opt/local/Qt && mkdir ~/programs/code-lhdr/build && cd ~/programs/code-lhdr/build && cmake .. -DCMAKE_C_COMPILER="/usr/bin/gcc"       -DCMAKE_CXX_COMPILER="/usr/bin/g++" -DCMAKE_BUILD_TYPE="Release"  -DCMAKE_VERBOSE_MAKEFILE=1 -DCMAKE_CXX_FLAGS=" -O3   -march=x86-64 -std=gnu++11"   -DUPDATE_TRANSLATIONS=1  -DCMAKE_PREFIX_PATH=$(echo $QT/lib/cmake/* | sed -Ee 's$ $;$g')
+RUN export QT=/opt/local/Qt && mkdir ~/programs/code-lhdr/build && cd ~/programs/code-lhdr/build && cmake .. -DCMAKE_C_COMPILER="/usr/bin/gcc"       -DCMAKE_CXX_COMPILER="/usr/bin/g++" -DCMAKE_BUILD_TYPE="Release"  -DCMAKE_VERBOSE_MAKEFILE=1 -DCMAKE_CXX_FLAGS=" -O3   -march=x86-64 -std=gnu++17"   -DUPDATE_TRANSLATIONS=1  -DCMAKE_PREFIX_PATH=$(echo $QT/lib/cmake/* | sed -Ee 's$ $;$g')
 RUN cd ~/programs/code-lhdr/build && make -j2 install
 
 #   set entrypoint cmd
